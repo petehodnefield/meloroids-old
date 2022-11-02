@@ -1,0 +1,246 @@
+:root {
+    --primary: #7d6373;
+    --secondary: rgba(141, 80, 80, 0.797);
+    --third: rgb(247, 117, 117);
+}
+
+html {
+    text-align: center;
+}
+
+#root {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+}
+
+h1 {
+    font-size: clamp(5rem, 7vw, 7rem);
+    margin: 0;
+}
+h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin: 0;
+    padding-bottom: .5rem;
+}
+h1, h2 {
+    text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 
+        -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
+}
+h3 {
+    font-size: 2rem;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+p {
+    font-size:  1.5rem
+}
+
+.body {
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+
+.container > div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .5rem;
+    max-width: 90%;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.artistSelect {
+    background: black;
+    color: white;
+    padding: .6rem;
+    border-radius: 100vmax;
+    max-width: 70%;
+    min-width: 50%;
+    text-align: center;
+    font-size: clamp(1.4rem, 1.5rem, 2.5rem);
+}
+
+.selectedDataContainer {
+    display: flex;
+    justify-content: space-around;
+    max-width: 70%;
+    align-items: center;
+}
+.artistPhotoContainer {
+    max-width: 30%;
+}
+
+.selectedPhoto {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+}
+
+
+
+/* Footer Style Begin */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 
+    -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
+    margin-top: auto;
+}
+
+.section {
+    margin-bottom: 100px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.column {
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+}
+.artist-container {
+    margin: 1rem;
+    background-color: var(--secondary);
+    padding:  1rem .7rem;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-container:hover {
+    cursor: pointer;
+    transition: .4s;
+    box-shadow: 0 0 10px 0 var(--primary);
+}
+.artist-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+.selected-artist {
+    opacity: .6;
+    transition: .8s;
+}
+.button-container {
+    width: 60%;
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+
+
+
+
+
+/* Button style */
+.btn {
+    padding: .4rem 4rem;
+    border-radius: 100vmax;
+    font-size: 1.3rem;
+    border: none;
+    margin: .5rem;
+    color: white;
+    background: black;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.select-btn {
+}
+.start-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    font-size: 2rem;
+}
+
+.selected-mode {
+    opacity: .8;
+    transition: .4s;
+}
+
+.songs-used-container {
+    display: flex
+    ;
+    flex-direction: column;
+}
+
+.songs-used {
+    background: var(--secondary);
+    margin: 1rem;
+    border-radius: 20px;
+}
+
+.mode-img {
+    box-shadow: -3px 3px 3px white;
+    width: 100%;
+    height: 100%;
+}
+.img-container {
+    padding: 1rem;
+}
+
+.timer-container {
+    padding: 0;
+    border-radius: 20px;
+    background: var(--primary);
+    text-align: center;
+    width: 20%;
+}
+.timer {
+    font-size: 1.5rem;
+}
+@media screen and (min-width: 1080px) {
+    .header {
+        justify-content: flex-start;
+        padding-left: 3rem;
+    }
+}
