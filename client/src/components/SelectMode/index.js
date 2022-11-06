@@ -73,8 +73,8 @@ function SelectMode() {
   ];
   return (
     <div className="container">
-      <div>
-        <h2>Select an artist</h2>
+      <div className="select-container">
+        <h2 className="select__text">Select an artist</h2>
         <select
           name="artists"
           id="artists"
@@ -87,12 +87,12 @@ function SelectMode() {
           ))}
         </select>
       </div>
-      <div className="data-container">
-        <h2>Select a mode</h2>
+      <div className="select-container">
+        <h2 className="select__text">Select a mode</h2>
         <div className="button-container">
           {modes.map((mode) => (
             <button
-              className={`btn select-btn ${
+              className={`btn btn-primary ${
                 selectedMode === mode.name ? "selected-mode" : ""
               }`}
               onClick={() => setSelectedMode(mode.name)}
@@ -122,7 +122,7 @@ function SelectMode() {
               <img />
             </div>
             <Link
-              className="btn start-btn"
+              className="btn btn-secondary"
               to={`/artists/${selectedArtists}/${selectedMode}`}
             >
               Start

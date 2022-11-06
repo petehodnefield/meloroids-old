@@ -38,7 +38,7 @@ function App() {
       <Router>
         <div className="body">
           <div className="header">
-            <a href="/">
+            <a href="#">
               <h1>Meloroids </h1>
             </a>{" "}
           </div>

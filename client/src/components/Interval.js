@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { ONE_SONG, ARTISTS } from "../utils/queries";
+
 import Card from "./Card";
 
 function Interval(props) {
@@ -9,12 +9,11 @@ function Interval(props) {
 
   const [minutes, setMinutes] = useState(6);
   let { artists, photo } = useParams();
-  let progression = "6545";
-  const { loading, error, data } = useQuery(ONE_SONG, {
-    variables: { artistName: artists, progression: progression },
-  });
-  const { artist_name, key } = data.oneSong;
-  console.log(artist_name);
+  let artist_name = "Gunna";
+  const keyData = "AMinor";
+  let progression = "i bVII bVI bVII";
+  let tempo = "130 BPM";
+
   const songsUsed = [
     {
       song: "Money",
@@ -51,61 +50,39 @@ function Interval(props) {
     };
   }, [seconds]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :( WOE!!!</p>;
-
   return (
     <div className="container">
-      // <h2 className="section-header">Interval</h2>
       <Card
         artist_name={artist_name}
         minutes={minutes}
         seconds={seconds}
-        key={key}
+        keyData={keyData}
         progression={progression}
+        tempo={tempo}
       ></Card>
-      {/* <div className="artist-container">
-        {" "}
-        <div className="row">
-          <div className="img-container">
-            {" "}
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/d/de/Gunna_in_2021.png"
-              className="artist-img mode-img"
-            ></img>
-          </div>
-          <div className="column">
-            <h3 className="artist-name">{artists}</h3>
-            <h4>Progression: I V IV VI</h4>
-            <h4>This progression is used in 40% of {artists}'s songs</h4>
-          </div>
+      <div className="examples-container">
+        <div className="example">
+          <img
+            className="example__img"
+            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
+          />
+          <h2 className="example__song">Argentina</h2>
         </div>
-        <div className="timer-container">
-          {seconds < 10 ? (
-            <p className="timer">
-              {" "}
-              {minutes}: 0{seconds}
-            </p>
-          ) : (
-            <p className="timer">
-              {" "}
-              {minutes}: {seconds}
-            </p>
-          )}
+        <div className="example">
+          <img
+            className="example__img"
+            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
+          />
+          <h2 className="example__song">Argentina</h2>
+        </div>
+        <div className="example">
+          <img
+            className="example__img"
+            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
+          />
+          <h2 className="example__song">Argentina</h2>
         </div>
       </div>
-      <div className=" songs-used-container">
-        <h3>Songs that use this progression: </h3>
-        <div className="row">
-          {" "}
-          {songsUsed.map((songs) => (
-            <div className="songs-used">
-              <h3>{songs.song}</h3>
-              <h2>{songs.album}</h2>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }
