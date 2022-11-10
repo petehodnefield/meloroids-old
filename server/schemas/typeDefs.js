@@ -30,10 +30,11 @@ const typeDefs = gql`
   type Query {
     artists: [Artist]
     artist(name: String!): Artist
-    oneSong(artist_name: String!, progression: String!): Song
-    randomSong(artist_name: String!, album_name: String!): [Album]
-    album: [Album]
+
+    albums: [Album]
+    album(artist_name: String): [Album]
     songs: [Song]
+    song(artist_name: String): [Song]
   }
 
   type Mutation {

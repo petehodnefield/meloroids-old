@@ -29,19 +29,15 @@ const resolvers = {
           },
         });
     },
+
     songs: async () => {
       return Song.find().populate("artist");
     },
-    oneSong: async (parent, { artist_name, progression }) => {
-      const params = { artist_name, progression };
-      console.log(params);
-      return Song.findOne(params).populate("songs");
+    song: async (parent, { artist_name }) => {
+      return Song.find({ artist_name });
     },
-    randomSong: async (parent, { artist_name, album_name }) => {
-      const params = { artist_name, album_name };
-      return Album.find(params).populate("songs");
-    },
-    album: async () => {
+
+    albums: async () => {
       return Album.find()
         .populate({
           path: "artist",
@@ -53,6 +49,11 @@ const resolvers = {
         .populate({
           path: "songs",
         });
+    },
+    album: async (parent, { artist_name }) => {
+      return Album.find({ artist_name }).populate({
+        path: "songs",
+      });
     },
   },
   Mutation: {
