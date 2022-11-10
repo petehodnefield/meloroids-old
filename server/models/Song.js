@@ -9,7 +9,7 @@ const songSchema = new Schema(
       minlength: 1,
       maxlength: 280,
     },
-    artist_name: { type: String },
+
     progression: {
       type: String,
       required: true,
@@ -22,7 +22,25 @@ const songSchema = new Schema(
       type: String,
       required: true,
     },
-    album: [albumSchema],
+    artist_name: {
+      type: String,
+      required: true,
+    },
+    album_name: {
+      type: String,
+    },
+    artist: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Artist",
+      },
+    ],
+    albums: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Album",
+      },
+    ],
   },
   {
     toJSON: {

@@ -9,8 +9,19 @@ const albumSchema = new Schema(
     },
     artist_name: {
       type: String,
-      required: true,
     },
+    artist: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Artist",
+      },
+    ],
+    songs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Song",
+      },
+    ],
   },
   {
     toJSON: {
@@ -18,4 +29,5 @@ const albumSchema = new Schema(
     },
   }
 );
-module.exports = albumSchema;
+const Album = model("Album", albumSchema);
+module.exports = Album;

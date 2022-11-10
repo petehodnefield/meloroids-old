@@ -8,10 +8,10 @@ const artistSchema = new Schema(
       unique: true,
       trim: true,
     },
-    songs: [
+    albums: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Song",
+        ref: "Album",
       },
     ],
   },
@@ -21,10 +21,6 @@ const artistSchema = new Schema(
     },
   }
 );
-
-artistSchema.virtual("songCount").get(function () {
-  return this.songs.length;
-});
 
 const Artist = model("Artist", artistSchema);
 

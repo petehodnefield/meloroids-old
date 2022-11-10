@@ -1,73 +1,100 @@
 const db = require("../config/connection");
-const { Artist, Song } = require("../models");
+const { Artist, Song, Album } = require("../models");
 const artist_data = require("./data/artist-data");
 const album_data = require("./data/album-data");
 const song_data = require("./data/song-data");
 
 db.once("open", async () => {
-  await Artist.deleteMany();
   await Song.deleteMany();
+  await Album.deleteMany();
+  await Artist.deleteMany();
 
-  // Artist_Seeding
-  const artistData = [];
-  for (let i = 0; i < artist_data.length; i++) {
-    const name = artist_data[i].name;
+  const createdArtist = await Artist.create(artist_data);
+  const idea = createdArtist[0]._id;
 
-    artistData.push({ name });
+  async function updateArtistAndAlbum(id1, id2) {
+    await Artist.updateOne({ _id: id1 }, { $push: { albums: id2 } });
+    await Album.updateOne({ _id: id2 }, { $push: { artist: id1 } });
   }
-  const createdArtists = await Artist.collection.insertMany(artistData);
+  async function updateAlbumAndSong(id1, id2) {
+    const pushToAlbum = await Album.updateOne(
+      { _id: id1 },
+      { $push: { songs: id2 } }
+    );
+  }
+  async function updateArtistAndSong(id1, id2) {
+    const pushToSong = await Song.updateOne(
+      { _id: id2 },
+      { $push: { artist: id1 } }
+    );
+  }
 
-  console.log("Artist seeded");
-
-  // song_seeding;
-  const songData = [];
-  for (let i = 0; i < song_data.length; i++) {
-    const { song_name, artist_name, progression, key, tempo } = song_data[i];
-    const match = artistData.findIndex((artist) => {
-      if (artist.name === song_data[i].artist_name) {
-        return true;
+  // albumSeeding
+  const matchArtistToAlbum = async (album) => {
+    const artists = createdArtist.forEach((artist) => {
+      const artistPair = artist.name;
+      if (artistPair === album.artist_name) {
+        updateArtistAndAlbum(artist._id, album._id);
+        // Artist.updateOne({ _id: artist._id }, { $push: { albums: album._id } });
       } else {
-        return false;
+        return;
       }
     });
-    const { _id: artistId } = artistData[match];
-    const createdSongs = await Song.create({
-      song_name,
+  };
+  let empty = [];
+  for (let i = 0; i < album_data.length; i++) {
+    const album_name = album_data[i].album_name;
+    const artist_name = album_data[i].artist_name;
+    const createdAlbum = await Album.create({ album_name, artist_name });
+    empty.push(createdAlbum);
+    matchArtistToAlbum(createdAlbum);
+  }
+  // song seeding
+  const matchSongToAlbum = (song) => {
+    const albums = empty.forEach((album) => {
+      const albumPair = album.album_name;
+      if (albumPair === song.album_name) {
+        updateAlbumAndSong(album._id, song._id);
+        // Artist.updateOne({ _id: artist._id }, { $push: { albums: album._id } });
+      } else {
+        return;
+      }
+    });
+  };
+  // song seeding
+  const matchSongToArtist = (song) => {
+    const artist = createdArtist.forEach((artist) => {
+      console.log(song.artist_name, artist.name);
+      const artistPair = song.artist_name;
+      if (artistPair === artist.name) {
+        updateArtistAndSong(artist._id, song._id);
+        // Artist.updateOne({ _id: artist._id }, { $push: { albums: album._id } });
+      } else {
+        return;
+      }
+    });
+  };
+  for (let i = 0; i < song_data.length; i++) {
+    const artist_name = song_data[i].artist_name;
+    const album_name = song_data[i].album_name;
+    const song_name = song_data[i].song_name;
+    const progression = song_data[i].progression;
+    const key = song_data[i].key;
+    const tempo = song_data[i].tempo;
+    const createdSong = await Song.create({
       artist_name,
+      album_name,
+      song_name,
       progression,
       key,
       tempo,
     });
-    const updatedArtist = await Artist.updateOne(
-      { _id: artistId },
-      { $push: { songs: createdSongs._id } }
-    );
-    songData.push(createdSongs);
+
+    matchSongToAlbum(createdSong);
+    matchSongToArtist(createdSong);
   }
 
-  // Album_Seeding
-
-  for (let i = 0; i < album_data.length; i++) {
-    const album_name = album_data[i].album_name;
-    const artist_name = album_data[i].artist_name;
-
-    const match = songData.findIndex((song) => {
-      if (song.artist_name === artist_name) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    const { _id: songId } = songData[match];
-
-    const updatedSongs = await Song.updateOne(
-      { _id: songId },
-      { $push: { album: { album_name, artist_name } } }
-    );
-  }
-
-  console.log("Album seeded");
-
+  const lookUp = await Artist.find({ name: "Gunna" });
+  console.log("Seeded complete");
   process.exit();
 });
