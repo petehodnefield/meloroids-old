@@ -33,6 +33,7 @@ const typeDefs = gql`
 
     albums: [Album]
     album(artist_name: String): [Album]
+
     songs: [Song]
     song(artist_name: String): [Song]
   }

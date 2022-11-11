@@ -4,7 +4,7 @@ const song_data = [
     album_name: "Death Race for Love",
     song_name: "All Girls Are The Same",
     progression: "6545",
-    key: "a-minor",
+    key: "Eminor",
     tempo: "120",
   },
   {
@@ -12,9 +12,9 @@ const song_data = [
     album_name: "Death Race for Love",
 
     song_name: "Lucid Dreams",
-    progression: "6545",
-    key: "a-minor",
-    tempo: "120",
+    progression: "6543",
+    key: "F#minor",
+    tempo: "170",
   },
   {
     artist_name: "Juice WRLD",
@@ -110,7 +110,7 @@ const song_data = [
     artist_name: "21 Savage",
     album_name: "I am > I was",
 
-    song_name: "Need to Know",
+    song_name: "a lot",
     progression: "6545",
     key: "a-minor",
     tempo: "120",
@@ -119,7 +119,7 @@ const song_data = [
     artist_name: "Jack Harlow",
     album_name: "Death Race for Love",
 
-    song_name: "Need to Know",
+    song_name: "First Class",
     progression: "6545",
     key: "a-minor",
     tempo: "120",
@@ -128,7 +128,7 @@ const song_data = [
     artist_name: "Kid Laroi",
     album_name: "Death Race for Love",
 
-    song_name: "Need to Know",
+    song_name: "Stay (feat. Justin Bieber)",
     progression: "6545",
     key: "a-minor",
     tempo: "120",

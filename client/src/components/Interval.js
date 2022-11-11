@@ -1,61 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import { ARTISTS, SINGLE_ARTIST, SINGLE_SONG } from "../utils/queries";
 import Card from "./Card";
 
-function Interval(props) {
-  const [seconds, setSeconds] = useState(0);
+function Interval({ photo }) {
+  const { artists: artist, mode } = useParams();
 
-  const [minutes, setMinutes] = useState(6);
-  let { artists, photo } = useParams();
-  let artist_name = "Gunna";
+  let artist__name = "Juice WRLD";
   const keyData = "AMinor";
   let progression = "i bVII bVI bVII";
   let tempo = "130 BPM";
 
-  const songsUsed = [
-    {
-      song: "Money",
-      album: "Sample Album",
-      img: "",
-    },
-    {
-      song: "Honey",
-      album: "Sample Album",
-      img: "",
-    },
-    {
-      song: "Bands",
-      album: "Sample Album",
-      img: "",
-    },
-  ];
-
-  useEffect(() => {
-    let interval;
-    interval = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
-    }, 1000);
-    if (seconds == 0 && minutes == 0) {
-      clearInterval(interval);
-      window.location.replace("/");
-    } else if (seconds == 0) {
-      clearInterval(interval);
-      setMinutes((minutes) => minutes - 1);
-      setSeconds(59);
-    }
-    return () => {
-      clearInterval(interval);
-    };
-  }, [seconds]);
+  const { loading, error, data } = useQuery(SINGLE_ARTIST, {
+    variables: { name: artist__name },
+  });
 
   return (
     <div className="container">
       <Card
-        artist_name={artist_name}
-        minutes={minutes}
-        seconds={seconds}
+        artist_name={artist}
         keyData={keyData}
         progression={progression}
         tempo={tempo}

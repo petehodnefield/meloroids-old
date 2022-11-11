@@ -1,26 +1,46 @@
 import { gql } from "@apollo/client";
-export const ONE_SONG = gql`
-  query OneSong($artistName: String!, $progression: String!) {
-    oneSong(artist_name: $artistName, progression: $progression) {
-      _id
-      song_name
-      artist_name
-      progression
-
-      key
-    }
-  }
-`;
 
 export const ARTISTS = gql`
   query artists {
     artists {
       _id
       name
-      songs {
+      albums {
         _id
-        song_name
+        album_name
       }
+    }
+  }
+`;
+
+export const SINGLE_ARTIST = gql`
+  query Artist($name: String!) {
+    artist(name: $name) {
+      _id
+      name
+      albums {
+        _id
+        album_name
+        songs {
+          album_name
+          song_name
+        }
+        artist {
+          name
+          _id
+        }
+      }
+    }
+  }
+`;
+
+export const SINGLE_SONG = gql`
+  query Song($artistName: String) {
+    song(artist_name: $artistName) {
+      song_name
+      key
+      progression
+      tempo
     }
   }
 `;

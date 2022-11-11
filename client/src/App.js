@@ -16,6 +16,8 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Interval from "./components/Interval";
 
+import artistPhotos from "../src/components/photos";
+console.log(artistPhotos);
 const httpLink = createHttpLink({ uri: "/graphql" });
 
 const authLink = setContext((_, { headers }) => {
@@ -45,7 +47,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Freestyle" element={<Home />} />
-            <Route path="artists/:artists/:mode" element={<Interval />} />
+            <Route
+              path="artists/:artists/:mode"
+              element={<Interval photo={artistPhotos} />}
+            />
           </Routes>
           <Footer />a
         </div>
