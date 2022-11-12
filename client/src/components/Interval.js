@@ -4,50 +4,30 @@ import { useQuery } from "@apollo/client";
 import { ARTISTS, SINGLE_ARTIST, SINGLE_SONG } from "../utils/queries";
 import Card from "./Card";
 
+import Juice from "../assets/artists/juice.jpeg";
+import TwentyOne from "../assets/artists/21.jpeg";
+import Doja from "../assets/artists/doja.png";
+import Harlow from "../assets/artists/harlow.png";
+import Gunna from "../assets/artists/gunna.jpeg";
+
 function Interval({ photo }) {
+  // grab artist&&mode from parameters
   const { artists: artist, mode } = useParams();
+  console.log("photo", photo);
 
-  let artist__name = "Juice WRLD";
-  const keyData = "AMinor";
-  let progression = "i bVII bVI bVII";
-  let tempo = "130 BPM";
-
+  // use query to pull artist
   const { loading, error, data } = useQuery(SINGLE_ARTIST, {
-    variables: { name: artist__name },
+    variables: { name: artist },
   });
 
-  return (
-    <div className="container">
-      <Card
-        artist_name={artist}
-        keyData={keyData}
-        progression={progression}
-        tempo={tempo}
-      ></Card>
-      <div className="examples-container">
-        <div className="example">
-          <img
-            className="example__img"
-            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
-          />
-          <h2 className="example__song">Argentina</h2>
-        </div>
-        <div className="example">
-          <img
-            className="example__img"
-            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
-          />
-          <h2 className="example__song">Argentina</h2>
-        </div>
-        <div className="example">
-          <img
-            className="example__img"
-            src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/iagxxilshn40ml2kklmt/gunna-wunna-cover-art"
-          />
-          <h2 className="example__song">Argentina</h2>
-        </div>
+  if (loading) {
+    return <p>loading</p>;
+  } else {
+    return (
+      <div className="container">
+        <Card artist_name={artist}></Card>
       </div>
-    </div>
-  );
+    );
+  }
 }
 export default Interval;

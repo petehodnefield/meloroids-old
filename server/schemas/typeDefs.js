@@ -36,6 +36,7 @@ const typeDefs = gql`
 
     songs: [Song]
     song(artist_name: String): [Song]
+    referenceSongs(artist_name: String, progression: String): [Song]
   }
 
   type Mutation {

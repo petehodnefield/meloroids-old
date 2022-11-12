@@ -44,3 +44,13 @@ export const SINGLE_SONG = gql`
     }
   }
 `;
+
+export const REFERENCE_SONGS = gql`
+  query ReferenceSongs($artistName: String, $progression: String) {
+    referenceSongs(artist_name: $artistName, progression: $progression) {
+      song_name
+      album_name
+      artist_name
+    }
+  }
+`;

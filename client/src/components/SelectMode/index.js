@@ -4,6 +4,11 @@ import Footer from "../Footer";
 import SelectArtist from "../SelectArtist";
 import intervalIcon from "../../assets/icons/interval-icon.jpg";
 import freestyleIcon from "../../assets/icons/freestyle-icon.jpg";
+import Gunna from "../../assets/artists/gunna.jpeg";
+import Doja from "../../assets/artists/doja.png";
+import Juice from "../../assets/artists/juice.jpeg";
+import Harlow from "../../assets/artists/harlow.png";
+import Twenty1 from "../../assets/artists/21.jpeg";
 
 function SelectMode() {
   const [selectedMode, setSelectedMode] = useState("");
@@ -47,28 +52,23 @@ function SelectMode() {
   const artists = [
     {
       name: "Jack Harlow",
-      photo:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d8/Jack_Harlow_from_Warner_Music_New_Zealand_video.png",
+      photo: Harlow,
     },
     {
       name: "Doja Cat",
-      photo:
-        "https://upload.wikimedia.org/wikipedia/commons/4/46/Doja_Cat_in_2021.jpg",
+      photo: Doja,
     },
     {
       name: "21 Savage",
-      photo:
-        "https://www.etonline.com/sites/default/files/styles/max_640x640/public/images/2020-02/gettyimages-1202009222.jpg?h=b4681939&itok=E9SFAWNn",
+      photo: Twenty1,
     },
     {
       name: "Gunna",
-      photo:
-        "https://upload.wikimedia.org/wikipedia/commons/d/de/Gunna_in_2021.png",
+      photo: Gunna,
     },
     {
       name: "Juice WRLD",
-      photo:
-        "https://upload.wikimedia.org/wikipedia/commons/3/35/Juice_WRLD_-_Les_Ardentes_2019_%28cropped%29.jpg",
+      photo: Juice,
     },
   ];
   return (

@@ -5,8 +5,14 @@ import tempoIcon from "../../assets/icons/tempo-icon.png";
 import { useQuery } from "@apollo/client";
 import { SINGLE_SONG } from "../../utils/queries";
 import Timer from "../Timer";
+import Juice from "../../assets/artists/juice.jpeg";
+import TwentyOne from "../../assets/artists/21.jpeg";
+import Doja from "../../assets/artists/doja.png";
+import Harlow from "../../assets/artists/harlow.png";
+import Gunna from "../../assets/artists/gunna.jpeg";
+import Reference from "../Reference/index";
 
-function Card({ artist_name, tempo, keyData, progression }) {
+function Card({ artist_name }) {
   const {
     data: songData,
     loading: songLoading,
@@ -14,7 +20,6 @@ function Card({ artist_name, tempo, keyData, progression }) {
   } = useQuery(SINGLE_SONG, {
     variables: { artistName: artist_name },
   });
-
   if (songLoading) {
     return <p>loading</p>;
   } else {
@@ -24,30 +29,41 @@ function Card({ artist_name, tempo, keyData, progression }) {
     const selectedKey = randomIndex.key;
     const selectedProgression = randomIndex.progression;
     const selectedTempo = randomIndex.tempo;
-    console.log(selectedSong);
+
+    let artistImg;
+    if (artist_name === "Juice WRLD") {
+      artistImg = Juice;
+    } else if (artist_name === "Doja Cat") {
+      artistImg = Doja;
+    } else if (artist_name === "Gunna") {
+      artistImg = Gunna;
+    } else if (artist_name === "21 Savage") {
+      artistImg = TwentyOne;
+    } else if (artist_name === "Jack Harlow") {
+      artistImg = Harlow;
+    }
+
     return (
-      <div>
+      <div className="container">
         {" "}
         <div className="artist-container">
-          <h1>{selectedSong}</h1>
+          <button
+            className="btn btn-reroll"
+            onClick={() => {
+              document.location.reload();
+            }}
+          >
+            🎲
+          </button>
           <div className="row">
             <Timer></Timer>
             <div className="img-container">
               {" "}
-              <img
-                src="https://at-cdn-s02.audiotool.com/2017/12/25/documents/712790ezfzl/0/cover256x256-b433d6a06ca94fa08adaca3fdf3ecaca.jpg"
-                className="artist-img mode-img"
-              ></img>
+              <img src={artistImg} className="artist-img mode-img "></img>
             </div>
-
-            <button
-              onClick={() => {
-                document.location.reload();
-              }}
-            >
-              Reroll
-            </button>
           </div>
+
+          <h2 className="card__header">{selectedSong}</h2>
           <div className="row">
             <div className="data-icon-container">
               <img className="data-icon" src={keyIcon}></img>
@@ -64,10 +80,10 @@ function Card({ artist_name, tempo, keyData, progression }) {
           </div>
           <button className="btn start-btn">MIDI</button>
         </div>
-        <div className=" songs-used-container">
-          <h3>Songs that use this progression: </h3>
-          <div className="row"></div>
-        </div>
+        <Reference
+          artist_name={artist_name}
+          progression={selectedProgression}
+        ></Reference>
       </div>
     );
   }

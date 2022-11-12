@@ -61,17 +61,6 @@ p {
     padding: 1rem 0;
 }
 
-/* 
-.container > div {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 .5rem;
-    max-width: 90%;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-} */
 .select-container {
     display: flex;
     flex-direction: column;
@@ -100,12 +89,15 @@ p {
 }
 .artistPhotoContainer {
     max-width: 15%;
+    min-width: 15%;
+    min-height: 15%;
 }
 
 .selectedPhoto {
     max-width: 100%;
     max-height: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 
@@ -150,14 +142,21 @@ p {
 }
 .artist-container {
     margin: 1rem;
+    position: relative;
     padding:  1rem .7rem;
     background: black;
     text-align: center;
     border-radius: 20px;
     display: flex;
+    width: 40%;
+    max-width: 70%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card__header {
+    padding: 1rem 2rem;
 }
 .data-icon-container {
     max-width: 200px;
@@ -165,6 +164,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2rem;
 }
 .data-icon {
     width: 100%;
@@ -241,6 +241,17 @@ p {
     border: 2px solid black;
     font-size: 2rem;
 }
+.btn-reroll{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+    font-size: 4rem;
+}
+.btn-reroll:hover {
+    filter: brightness(120%);
+    transition: 500ms;
+}
 
 .selected-mode {
     opacity: .8;
@@ -260,26 +271,74 @@ p {
 }
 
 .mode-img {
-    box-shadow: -3px 3px 3px white;
+    box-shadow: -3px 3px 10px white inset;
     width: 100%;
+    border-radius: 50%;
     height: 100%;
 }
 .img-container {
+    position: relative;
     padding: 1rem;
 }
 
 .timer-container {
     padding: 0;
-    border-radius: 20px;
-    background: white;
+    border-radius: 100vmax;
     color: black;
     text-align: center;
     width: 20%;
+    position: fixed;
+    top: 0; right: 20px
 }
 .timer {
-    font-size: 1.5rem;
+    font-size:  4.5rem;
     font-weight: bold;
 }
+
+
+
+/* // Reference song style */
+.ref-song-grid{
+    display: grid;
+    width: 80%;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns:repeat(3, 15vw );
+
+
+}
+.ref-song-container{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 20rem;
+    align-items: center;
+    background: black;
+    background-size: cover
+
+}
+
+.Gunna {
+    background-image: url(./assets/artists/gunna.jpeg);
+
+}
+.twentyone {
+    background-image: url(./assets/artists/21.jpeg);
+
+}
+.JuiceWRLD {
+    background-image: url(./assets/artists/juice.jpeg);
+
+}
+
+
+.DojaCat{
+    background-image: url(./assets/artists/doja.png);
+
+}
+
 @media screen and (min-width: 1080px) {
     .header {
         justify-content: flex-start;

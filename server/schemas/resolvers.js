@@ -36,6 +36,9 @@ const resolvers = {
     song: async (parent, { artist_name }) => {
       return Song.find({ artist_name });
     },
+    referenceSongs: async (parent, { artist_name, progression }) => {
+      return Song.find({ artist_name, progression });
+    },
 
     albums: async () => {
       return Album.find()

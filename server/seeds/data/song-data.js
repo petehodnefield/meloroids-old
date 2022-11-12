@@ -2,7 +2,7 @@ const song_data = [
   {
     artist_name: "Juice WRLD",
     album_name: "Death Race for Love",
-    song_name: "All Girls Are The Same",
+    song_name: "Empty",
     progression: "6545",
     key: "Eminor",
     tempo: "120",
@@ -11,7 +11,7 @@ const song_data = [
     artist_name: "Juice WRLD",
     album_name: "Death Race for Love",
 
-    song_name: "Lucid Dreams",
+    song_name: "Demonz",
     progression: "6543",
     key: "F#minor",
     tempo: "170",
@@ -20,7 +20,7 @@ const song_data = [
     artist_name: "Juice WRLD",
     album_name: "Death Race for Love",
 
-    song_name: "Lean wit Me",
+    song_name: "Big",
     progression: "6545",
     key: "a-minor",
     tempo: "120",
@@ -29,7 +29,151 @@ const song_data = [
     artist_name: "Juice WRLD",
     album_name: "Death Race for Love",
 
-    song_name: "I'm Still",
+    song_name: "Maze",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Fast",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Robbery",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "HeMotions",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Flaws and Sins",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Syphillis",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Who Shot Cupid?",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Ring Ring",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Desire",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Out My Way",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "The Bees Knees",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "On God (feat. Young Thug)",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "10 Feet",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Won't Let Go",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "She's the One",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Rider",
+    progression: "6545",
+    key: "a-minor",
+    tempo: "120",
+  },
+  {
+    artist_name: "Juice WRLD",
+    album_name: "Death Race for Love",
+
+    song_name: "Make Believe",
     progression: "6545",
     key: "a-minor",
     tempo: "120",
