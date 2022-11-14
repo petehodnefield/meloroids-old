@@ -15,6 +15,7 @@ import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Interval from "./pages/Interval/Interval";
+import Freestyle from "./pages/Freestyle/Freestyle";
 import Header from "./components/Header";
 
 const httpLink = createHttpLink({ uri: "/graphql" });
@@ -42,8 +43,8 @@ root.render(
         <Header></Header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Freestyle" element={<Home />} />
-          <Route path="artists/:artists/:mode" element={<Interval />} />
+          <Route path="artists/:artists/Freestyle" element={<Freestyle />} />
+          <Route path="artists/:artists/Interval" element={<Interval />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

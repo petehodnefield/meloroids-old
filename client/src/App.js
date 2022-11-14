@@ -15,9 +15,8 @@ import { setContext } from "@apollo/client/link/context";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Interval from "./pages/Interval/Interval";
+import Freestyle from "./pages/Freestyle/Freestyle";
 
-import artistPhotos from "../src/components/photos";
-console.log(artistPhotos);
 const httpLink = createHttpLink({ uri: "/graphql" });
 
 const authLink = setContext((_, { headers }) => {
@@ -46,11 +45,8 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Freestyle" element={<Home />} />
-            <Route
-              path="artists/:artists/:mode"
-              element={<Interval photo={artistPhotos} />}
-            />
+            <Route path="/artist/:artists/Freestyle" element={<Freestyle />} />
+            <Route path="artists/:artists/Interval" element={<Interval />} />
           </Routes>
           <Footer />a
         </div>

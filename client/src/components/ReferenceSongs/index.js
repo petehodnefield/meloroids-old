@@ -19,13 +19,18 @@ const ReferenceSongs = ({ artist_name, progression }) => {
     console.log(artistNameConcat);
 
     return (
-      <div className="ref-song-grid">
-        {songArray.map((song) => (
-          <div className={`ref-song-container ${artistNameConcat}`}>
-            <p className="ref__text">"{song.song_name}"</p>
-            <p className="ref__text ref__album">{song.album_name}</p>
-          </div>
-        ))}
+      <div>
+        <h2>
+          {artist_name} also uses {progression} in:
+        </h2>
+        <div className="ref-song-grid">
+          {songArray.map((song) => (
+            <div className={`ref-song-container ${artistNameConcat}`}>
+              <p className="ref__text">"{song.song_name}"</p>
+              <p className="ref__text ref__album">{song.album_name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
