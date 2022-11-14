@@ -148,15 +148,37 @@ p {
     text-align: center;
     border-radius: 20px;
     display: flex;
-    width: 40%;
+    width: 100%;
     max-width: 70%;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.card-icon-container {
+    display: flex;
+    flex-direction: column;
+}
+.card-img-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card__header {
     padding: 1rem 2rem;
+}
+
+.card__img {
+    width: 100%;
 }
 .data-icon-container {
     max-width: 200px;
@@ -314,28 +336,41 @@ p {
     display: flex;
     flex-direction: column;
     min-height: 20rem;
+    max-height: 20rem;
     align-items: center;
+    justify-content: center;
     background: black;
     background-size: cover
 
 }
+.ref__text {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 
+    -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
+}
+
+.ref__album {
+    font-size: 2rem;
+    padding: 1rem;
+}
 
 .Gunna {
-    background-image: url(./assets/artists/gunna.jpeg);
+    background-image: url(./artists/gunna.jpeg);
 
 }
 .twentyone {
-    background-image: url(./assets/artists/21.jpeg);
+    background-image: url(./artists/21.jpeg);
 
 }
 .JuiceWRLD {
-    background-image: url(./assets/artists/juice.jpeg);
+    background-image: url(./artists/juice.jpeg);
 
 }
 
 
 .DojaCat{
-    background-image: url(./assets/artists/doja.png);
+    background-image: url(./artists/doja.png);
 
 }
 

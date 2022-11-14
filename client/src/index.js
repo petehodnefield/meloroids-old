@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./styles.css";
+import "../src/assets/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   ApolloProvider,
@@ -14,7 +14,7 @@ import { setContext } from "@apollo/client/link/context";
 // Component/Page imports
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Interval from "./components/Interval";
+import Interval from "./pages/Interval/Interval";
 import Header from "./components/Header";
 
 const httpLink = createHttpLink({ uri: "/graphql" });

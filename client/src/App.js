@@ -14,7 +14,7 @@ import { setContext } from "@apollo/client/link/context";
 // Component/Page imports
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Interval from "./components/Interval";
+import Interval from "./pages/Interval/Interval";
 
 import artistPhotos from "../src/components/photos";
 console.log(artistPhotos);

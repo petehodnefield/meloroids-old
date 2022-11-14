@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { REFERENCE_SONGS } from "../../utils/queries";
-const Reference = ({ artist_name, progression }) => {
+const ReferenceSongs = ({ artist_name, progression }) => {
   console.log(progression);
   const { data, loading, error } = useQuery(REFERENCE_SONGS, {
     variables: { artistName: artist_name, progression: progression },
@@ -23,11 +23,11 @@ const Reference = ({ artist_name, progression }) => {
         {songArray.map((song) => (
           <div className={`ref-song-container ${artistNameConcat}`}>
             <p className="ref__text">"{song.song_name}"</p>
-            <p className="ref__text">{song.album_name}</p>
+            <p className="ref__text ref__album">{song.album_name}</p>
           </div>
         ))}
       </div>
     );
   }
 };
-export default Reference;
+export default ReferenceSongs;

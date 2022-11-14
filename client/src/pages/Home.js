@@ -1,15 +1,11 @@
 import React from "react";
-import SelectArtist from "../components/SelectArtist";
-import SelectMode from "../components/SelectMode";
+import ArtistModeSelect from "./ArtistModeSelect/ArtistModeSelect";
 function Home() {
   return (
     <div className="section">
-      {/* <SelectArtist /> */}
-      <SelectMode />
+      <ArtistModeSelect />
     </div>
   );
 }
-
-const testFunction = (example) => {};
 
 export default Home;
