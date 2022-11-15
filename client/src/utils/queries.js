@@ -54,3 +54,12 @@ export const REFERENCE_SONGS = gql`
     }
   }
 `;
+
+export const ARTIST_AND_PROGRESSION = gql`
+  query ArtistAndProgression($progression: String!, $artistName: String) {
+    artistAndProgression(progression: $progression, artist_name: $artistName) {
+      song_name
+      progression
+    }
+  }
+`;

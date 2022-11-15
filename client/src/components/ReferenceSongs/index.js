@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { REFERENCE_SONGS } from "../../utils/queries";
+import { REFERENCE_SONGS, ARTIST_AND_PROGRESSION } from "../../utils/queries";
 const ReferenceSongs = ({ artist_name, progression }) => {
   console.log(progression);
   const { data, loading, error } = useQuery(REFERENCE_SONGS, {
@@ -20,9 +20,6 @@ const ReferenceSongs = ({ artist_name, progression }) => {
 
     return (
       <div>
-        <h2>
-          {artist_name} also uses {progression} in:
-        </h2>
         <div className="ref-song-grid">
           {songArray.map((song) => (
             <div className={`ref-song-container ${artistNameConcat}`}>

@@ -3,6 +3,7 @@ import { React } from "react";
 import { useQuery } from "@apollo/client";
 import { SINGLE_SONG } from "../../../utils/queries";
 import Timer from "../../../components/Timer";
+import ReferenceSongsFrequency from "../../../components/ReferenceSongs/ReferenceSongsFrequency";
 import Juice from "../../../assets/artists/juice.jpeg";
 import TwentyOne from "../../../assets/artists/21.jpeg";
 import Doja from "../../../assets/artists/doja.png";
@@ -64,6 +65,10 @@ function IntervalCard({ artist_name }) {
             ></KeyTempoChords>
           </div>
         </div>
+        <ReferenceSongsFrequency
+          selectedProgression={selectedProgression}
+          artist_name={artist_name}
+        ></ReferenceSongsFrequency>
         <ReferenceSongs
           artist_name={artist_name}
           progression={selectedProgression}

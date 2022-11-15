@@ -3,11 +3,13 @@ const { Artist, Song, Album } = require("../models");
 const artist_data = require("./data/artist-data");
 const album_data = require("./data/album-data");
 const song_data = require("./data/song-data");
+const midi_data = require("./data/midi-data");
 
 db.once("open", async () => {
   await Song.deleteMany();
   await Album.deleteMany();
   await Artist.deleteMany();
+  console.log(midi_data);
 
   const createdArtist = await Artist.create(artist_data);
   const idea = createdArtist[0]._id;

@@ -21,6 +21,11 @@ const typeDefs = gql`
     albums: [Album]
   }
 
+  type Midi {
+    _id: ID
+    progresion: String!
+  }
+
   type Artist {
     _id: ID
     name: String
@@ -36,7 +41,11 @@ const typeDefs = gql`
 
     songs: [Song]
     song(artist_name: String): [Song]
+    artistAndProgression(artist_name: String, progression: String!): [Song]
+
     referenceSongs(artist_name: String, progression: String): [Song]
+
+    midi: [Midi]
   }
 
   type Mutation {

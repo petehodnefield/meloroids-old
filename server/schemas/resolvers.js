@@ -1,6 +1,6 @@
 const { Parser } = require("graphql/language/parser");
 const { models } = require("mongoose");
-const { Artist, Song, Album } = require("../models");
+const { Artist, Song, Album, Midi } = require("../models");
 const resolvers = {
   Query: {
     artists: async () => {
@@ -36,6 +36,10 @@ const resolvers = {
     song: async (parent, { artist_name }) => {
       return Song.find({ artist_name });
     },
+    artistAndProgression: async (parent, { artist_name, progression }) => {
+      return Song.find({ artist_name, progression });
+    },
+
     referenceSongs: async (parent, { artist_name, progression }) => {
       return Song.find({ artist_name, progression });
     },
@@ -57,6 +61,10 @@ const resolvers = {
       return Album.find({ artist_name }).populate({
         path: "songs",
       });
+    },
+
+    midi: async (parent, {}) => {
+      return Midi.find();
     },
   },
   Mutation: {
