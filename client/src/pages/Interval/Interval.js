@@ -4,10 +4,9 @@ import { useQuery } from "@apollo/client";
 import { ARTISTS, SINGLE_ARTIST, SINGLE_SONG } from "../../utils/queries";
 import IntervalCard from "./components/IntervalCard";
 
-function Interval({ photo }) {
+function Interval({}) {
   // grab artist&&mode from parameters
   const { artists: artist, mode } = useParams();
-  console.log("photo", photo);
 
   // use query to pull artist
   const { loading, error, data } = useQuery(SINGLE_ARTIST, {

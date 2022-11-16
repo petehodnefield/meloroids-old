@@ -21,14 +21,20 @@ const ReferenceSongsFrequency = ({ selectedProgression, artist_name }) => {
     const songsWithProgression = data.artistAndProgression.length;
 
     const progressionFrequency = (songsWithProgression / totalSongs) * 100;
-    console.log("p", progressionFrequency);
-
+    const frequencyRound = Math.floor(progressionFrequency);
     return (
       <div>
-        <h1>
-          {artist_name} uses {selectedProgression} in {progressionFrequency}% of
-          their songs
-        </h1>
+        <h2>
+          {artist_name} uses{" "}
+          <span className="text-emphasis">{selectedProgression}</span> in{" "}
+          {frequencyRound}% of their songs
+        </h2>
+        <div className="frequency-container">
+          <div
+            className="frequency__bar"
+            style={{ width: progressionFrequency + "%" }}
+          ></div>
+        </div>
       </div>
     );
   }

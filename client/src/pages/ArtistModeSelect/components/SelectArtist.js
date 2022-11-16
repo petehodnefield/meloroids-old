@@ -1,6 +1,5 @@
 import React from "react";
 const SelectArtist = (props) => {
-  console.log(props);
   return (
     <>
       <div className="select-container">

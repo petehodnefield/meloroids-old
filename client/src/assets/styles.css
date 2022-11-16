@@ -320,6 +320,23 @@ p {
 
 
 /* // Reference song style */
+.text-emphasis {
+    background: black;
+    border-radius: 100vmax;
+    padding: 0 1rem;
+}
+.frequency-container {
+    height: 6rem;
+    background: black;
+    border-radius: 100vmax;
+}
+.frequency__bar {
+    height: 6rem;
+    transition: 5s;
+    width: 0;
+    background: red;
+    border-radius: 100vmax;
+}
 .ref-song-grid{
     display: grid;
     width: 80%;

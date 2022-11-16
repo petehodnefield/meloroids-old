@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { REFERENCE_SONGS, ARTIST_AND_PROGRESSION } from "../../utils/queries";
 const ReferenceSongs = ({ artist_name, progression }) => {
-  console.log(progression);
   const { data, loading, error } = useQuery(REFERENCE_SONGS, {
     variables: { artistName: artist_name, progression: progression },
   });
@@ -11,12 +10,10 @@ const ReferenceSongs = ({ artist_name, progression }) => {
   } else {
     const songArray = data.referenceSongs;
 
-    console.log(songArray);
     let artistNameConcat = artist_name.split(" ").join("");
     if (artistNameConcat === "21Savage") {
       artistNameConcat = "twentyone";
     }
-    console.log(artistNameConcat);
 
     return (
       <div>

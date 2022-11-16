@@ -15,7 +15,6 @@ import ReRoll from "../../../components/KeyTempoChords/ReRoll";
 import { chordIcon, keyIcon, tempoIcon } from "../../../data/icons";
 
 function IntervalCard({ artist_name }) {
-  console.log(chordIcon, keyIcon);
   const {
     data: songData,
     loading: songLoading,

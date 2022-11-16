@@ -8,6 +8,7 @@ import Doja from "../../../assets/artists/doja.png";
 import Harlow from "../../../assets/artists/harlow.png";
 import Gunna from "../../../assets/artists/gunna.jpeg";
 import ReferenceSongs from "../../../components/ReferenceSongs/index";
+import ReferenceSongsFrequency from "../../../components/ReferenceSongs/ReferenceSongsFrequency";
 import KeyTempoChords from "../../../components/KeyTempoChords";
 import ReRoll from "../../../components/KeyTempoChords/ReRoll";
 import { chordIcon, keyIcon, tempoIcon } from "../../../data/icons";
@@ -61,7 +62,11 @@ function FreestyleCard({ artist_name }) {
               selectedProgression={selectedProgression}
             ></KeyTempoChords>
           </div>
-        </div>
+        </div>{" "}
+        <ReferenceSongsFrequency
+          selectedProgression={selectedProgression}
+          artist_name={artist_name}
+        ></ReferenceSongsFrequency>
         <ReferenceSongs
           artist_name={artist_name}
           progression={selectedProgression}
