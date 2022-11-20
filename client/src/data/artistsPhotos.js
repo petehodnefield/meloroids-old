@@ -1,7 +1,7 @@
 import Juice from "../assets/artists/juice.jpeg";
 import Gunna from "../assets/artists/gunna.jpeg";
-import Doja from "../assets/artists/doja.png";
-import Harlow from "../assets/artists/harlow.png";
+import Doja from "../assets/artists/doja.jpeg";
+import Harlow from "../assets/artists/harlow.jpeg";
 import Twenty1 from "../assets/artists/21.jpeg";
 export const artistsPhotos = [
   {

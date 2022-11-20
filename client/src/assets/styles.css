@@ -1,406 +1,136 @@
-:root {
-    --primary: #7d6373;
-    --secondary: rgba(141, 80, 80, 0.797);
-    --third: rgb(247, 117, 117);
-    --heading:    Helvetica ;
-
-    --body:    'Inter' ;
-
+*:root {
+    --primary: #FEFEFE;
+    --secondary: #232224;
+    --tertiary: #CA69F9;
+    --accent1: #423D47;
+    --accent2: #EFECF0;
+    --black: #000000;
+    --line-p: #AEAAAF;
 }
-
-html {
-    text-align: center;
-    
-
-}
-
-#root {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
-    width: 100%;
-    color: black;
+    color: var(--secondary);
+    font-weight: 300;
 }
-
-h1 {
-    font-size: clamp(5rem, 7vw, 7rem);
+h1,h2,h3,h4,h5 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
     margin: 0;
-    font-family: var(--heading);
-}
-h2 {
-    font-size: 2rem;
-    margin: 0;
-    font-family: var(--heading);
-
-    padding-bottom: .5rem;
-}
-
-h3 {
-    font-size: 2rem;
 }
 a {
     text-decoration: none;
-    color: white;
 }
-p {
-    font-size:  1rem;
-    font-family: var(--body);
+p, a {
+    font-family: 'Inter';
+    color: var(--secondary);
+} 
+h1 {
+    font-size: 2.5rem;
 }
-
-.body {
-    height: 100vh;
-    width: 100%;
-}
-
-.header {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 0;
-}
-
-.select-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    width: 100%;
-}
-
-.artistSelect {
-    background: black;
-    color: white;
-    padding: .6rem;
-    border-radius: 100vmax;
-    max-width: 70%;
-    min-width: 20%;
-    text-align: center;
-    font-size: clamp(1.4rem, 1.5rem, 2.5rem);
-}
-
-.selectedDataContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;    
-    align-items: center;
-    gap: 3rem;
-}
-.artistPhotoContainer {
-    max-width: 15%;
-    min-width: 15%;
-    min-height: 15%;
-}
-
-.selectedPhoto {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-
-
-/* Footer Style Begin */
-.footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-    margin-top: auto;
-}
-
-.section {
-    margin-bottom: 100px;
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-}
-
-.row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    align-items: center;
-}
-.column {
-    display: flex;
-    text-align: center;
-    justify-content: center; 
-    align-items: center;
-    flex-direction: column;
-}
-.artist-container {
-    margin: 1rem;
-    position: relative;
-    padding:  1rem .7rem;
-    background: black;
-    text-align: center;
-    border-radius: 20px;
-    display: flex;
-    width: 100%;
-    max-width: 70%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.card-icon-container {
-    display: flex;
-    flex-direction: column;
-}
-.card-img-container {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card__header {
-    padding: 1rem 2rem;
-}
-
-.card__img {
-    width: 100%;
-}
-.data-icon-container {
-    max-width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 2rem;
-}
-.data-icon {
-    width: 100%;
-}
-.artist-container:hover {
-    cursor: pointer;
-    transition: .4s;
-    box-shadow: 0 0 10px 0 var(--primary);
-}
-.artist-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 30px;
-}
-
-.selected-artist {
-    opacity: .6;
-    transition: .8s;
-}
-.button-container {
-    width: 60%;
-    display: flex;
-    justify-content: center; 
-    margin-bottom: 1rem;
-    align-items: center;
-}
-
-
-.examples-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
-}
-
-
-.example {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    max-width: 20%;
-    min-height: 20rem;
-    border-radius: 2px;
-}
-.example__img {
-    width: 80%;
-    padding-top: 1rem;
-}
-
-
-/* Button style */
-.btn {
-    border-radius: 100vmax;
-    font-size: 1rem;
-    border: none;
-    margin: .5rem;
-
-}
-
-.btn:hover {
-    cursor: pointer;
-}
-
-.btn-primary {
-    color: white;
-    background: black;
-    padding: .25rem 0;
-    width: 15rem;
-
-}
-.btn-secondary {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+h2{
     font-size: 2rem;
 }
-.btn-reroll{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: black;
-    font-size: 4rem;
+h3 {
+    font-size: 1.5rem;
 }
-.btn-reroll:hover {
-    filter: brightness(120%);
-    transition: 500ms;
+h4 {
+    font-size: 1.125rem;
+}
+h5 {
+    font-size: .875rem;
 }
 
-.selected-mode {
-    opacity: .8;
-    transition: .4s;
+.p1 {
+    font-size: 1rem;
+}
+.p2 {
+    font-size: .875rem;
+}
+.p3 {
+    font-size: .75rem;
 }
 
-.songs-used-container {
-    display: flex
-    ;
-    flex-direction: column;
+.bold {
+    font-weight: 600;
 }
-
-.songs-used {
-    background: var(--secondary);
-    margin: 1rem;
-    border-radius: 20px;
+.uppercase {
+    text-transform: uppercase;
 }
-
-.mode-img {
-    box-shadow: -3px 3px 10px white inset;
-    width: 100%;
-    border-radius: 50%;
+.logo-wrapper {
+    max-height: 7rem;
+    text-align: center;
+    border-bottom: 1px solid  var(--line-p);
+    display: flex;
+    justify-content: center;
+    
+    padding: 1rem 0;    
+}
+.home-link {
+    width: 4em;
+}
+.logo-full {
+    display: none;
     height: 100%;
 }
-.img-container {
-    position: relative;
-    padding: 1rem;
+.logo-small {
+    height: 100%;
 }
-
-.timer-container {
-    padding: 0;
-    border-radius: 100vmax;
-    color: black;
-    text-align: center;
-    width: 20%;
-    position: fixed;
-    top: 0; right: 20px
+.hamburger-wrapper {
+    position: absolute;
+    left: 1.25rem;
+    top: 2rem;
+    height: 10rem;
 }
-.timer {
-    font-size:  4.5rem;
-    font-weight: bold;
+.hamburger-wrapper:hover {
+    cursor: pointer;
 }
-
-
-
-/* // Reference song style */
-.text-emphasis {
-    background: black;
-    border-radius: 100vmax;
-    padding: 0 1rem;
-}
-.frequency-container {
-    height: 6rem;
-    background: black;
+.hamburger__line {
+    background: var(--black);
+    width: 2.5rem;
+    height: .25rem;
+    margin: .5rem 0;
     border-radius: 100vmax;
 }
-.frequency__bar {
-    height: 6rem;
-    transition: 5s;
-    width: 0;
-    background: red;
-    border-radius: 100vmax;
-}
-.ref-song-grid{
-    display: grid;
-    width: 80%;
-    row-gap: 2rem;
-    column-gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns:repeat(3, 15vw );
 
 
-}
-.ref-song-container{
-    border-radius: 20px;
+.artist-mode-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 20rem;
-    max-height: 20rem;
     align-items: center;
     justify-content: center;
-    background: black;
-    background-size: cover
+}
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+.choice-wrapper {
+    position: absolute;
+        
+    top:2.5rem;    width: 50%;
+}
+.select__prompt {
+     height: 1.5rem;
+    background: var(--accent1);
+    width: 100%;
+    border-radius: 5px;
+}
+.select__artist {
+    height: 1.5rem;
+    background: var(--accent1);
+    color: var(--primary);
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.25rem 0;
+    border: .25px solid var(--primary);
+    text-align: left;
+    cursor: pointer;
 
 }
-.ref__text {
-    font-size: 3rem;
-    margin: 0;
-    text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 
-    -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
-}
-
-.ref__album {
-    font-size: 2rem;
-    padding: 1rem;
-}
-
-.Gunna {
-    background-image: url(./artists/gunna.jpeg);
-
-}
-.twentyone {
-    background-image: url(./artists/21.jpeg);
-
-}
-.JuiceWRLD {
-    background-image: url(./artists/juice.jpeg);
-
-}
-
-
-.DojaCat{
-    background-image: url(./artists/doja.png);
-
-}
-
-@media screen and (min-width: 1080px) {
-    .header {
-        justify-content: flex-start;
-        padding-left: 3rem;
-    }
+.select__choice:hover {
+    opacity: .8;
 }

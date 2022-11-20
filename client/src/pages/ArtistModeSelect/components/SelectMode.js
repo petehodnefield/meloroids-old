@@ -3,8 +3,8 @@ import React from "react";
 const SelectMode = ({ modes, selectedMode, setSelectedMode }) => {
   return (
     <div>
-      <div className="select-container">
-        <h2 className="select__text">Select a mode</h2>
+      <div className="select-">
+        <h5 className="select__text uppercase">Select a mode</h5>
         <div className="button-container">
           {modes.map((mode) => (
             <button

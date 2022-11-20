@@ -1,5 +1,5 @@
-import intervalIcon from "../assets/icons/interval-icon.jpg";
-import freestyleIcon from "../assets/icons/freestyle-icon.jpg";
+import intervalIcon from "../assets/icons/freestyle-icon.svg";
+import freestyleIcon from "../assets/icons/freestyle-icon.svg";
 
 export const modesList = [
   {

@@ -42,39 +42,41 @@ function ArtistModeSelect() {
   }, [selectedMode]);
 
   return (
-    <div className="container">
-      <SelectArtist
-        setSelectedArtists={setSelectedArtists}
-        selectedArtists={selectedArtists}
-        artists={artists}
-      ></SelectArtist>
-      <SelectMode
-        modes={modes}
-        selectedMode={selectedMode}
-        setSelectedMode={setSelectedMode}
-      ></SelectMode>
+    <div className="artist-mode-container">
+      <div className="artist-mode-wrapper">
+        <SelectArtist
+          setSelectedArtists={setSelectedArtists}
+          selectedArtists={selectedArtists}
+          artists={artists}
+        ></SelectArtist>
+        <SelectMode
+          modes={modes}
+          selectedMode={selectedMode}
+          setSelectedMode={setSelectedMode}
+        ></SelectMode>
 
-      {!selectedArtists && !selectedMode ? (
-        ""
-      ) : (
-        <ChosenArtistMode
-          selectedArtistsPhoto={selectedArtistsPhoto}
-          selectedModePhoto={selectedModePhoto}
-        ></ChosenArtistMode>
-      )}
+        {!selectedArtists && !selectedMode ? (
+          ""
+        ) : (
+          <ChosenArtistMode
+            selectedArtistsPhoto={selectedArtistsPhoto}
+            selectedModePhoto={selectedModePhoto}
+          ></ChosenArtistMode>
+        )}
 
-      {!selectedMode || !selectedArtists ? (
-        ""
-      ) : (
-        <div>
-          <Link
-            className="btn btn-secondary"
-            to={`/artists/${selectedArtists}/${selectedMode}`}
-          >
-            Start
-          </Link>
-        </div>
-      )}
+        {!selectedMode || !selectedArtists ? (
+          ""
+        ) : (
+          <div>
+            <Link
+              className="btn btn-secondary"
+              to={`/artists/${selectedArtists}/${selectedMode}`}
+            >
+              Start
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
