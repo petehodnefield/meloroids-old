@@ -16,7 +16,6 @@ const SelectArtist = (props) => {
           ))}
         </select>
       </div>
-      <div className="select-container"></div>
     </>
   );
 };
