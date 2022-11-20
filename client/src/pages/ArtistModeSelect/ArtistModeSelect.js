@@ -67,14 +67,14 @@ function ArtistModeSelect() {
         {!selectedMode || !selectedArtists ? (
           ""
         ) : (
-          <div>
+          <button className="btn btn-primary btn-link">
             <Link
-              className="btn btn-secondary"
+              className=" uppercase p3"
               to={`/artists/${selectedArtists}/${selectedMode}`}
             >
               Start
             </Link>
-          </div>
+          </button>
         )}
       </div>
     </div>
