@@ -46,31 +46,29 @@ function FreestyleCard({ artist_name }) {
     }
 
     return (
-      <div className="container">
-        {" "}
-        <div className="artist-container">
+      <div className="train-wrapper">
+        <div className="train-img-container">
+          {" "}
+          <img src={artistImg} className="  train__img"></img>
+        </div>
+        <div className="song-data-wrapper">
+          <h2 className="song__header">{selectedSong}</h2>
+          <KeyTempoChords
+            selectedKey={selectedKey}
+            selectedTempo={selectedTempo}
+            selectedProgression={selectedProgression}
+          ></KeyTempoChords>
+
           <ReRoll></ReRoll>
-          <div className="card-img-container">
-            {" "}
-            <img src={artistImg} className="  card__img"></img>
-          </div>
-          <div className="card-wrapper">
-            <h2 className="card__header">"{selectedSong}"</h2>
-            <KeyTempoChords
-              selectedKey={selectedKey}
-              selectedTempo={selectedTempo}
-              selectedProgression={selectedProgression}
-            ></KeyTempoChords>
-          </div>
-        </div>{" "}
-        <ReferenceSongsFrequency
+        </div>
+        {/* <ReferenceSongsFrequency
           selectedProgression={selectedProgression}
           artist_name={artist_name}
         ></ReferenceSongsFrequency>
         <ReferenceSongs
           artist_name={artist_name}
           progression={selectedProgression}
-        ></ReferenceSongs>
+        ></ReferenceSongs> */}
       </div>
     );
   }

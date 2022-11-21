@@ -16,11 +16,7 @@ function FreeStyle({ photo }) {
   if (loading) {
     return <p>loading</p>;
   } else {
-    return (
-      <div className="container">
-        <FreestyleCard artist_name={artist}></FreestyleCard>
-      </div>
-    );
+    return <FreestyleCard artist_name={artist}></FreestyleCard>;
   }
 }
 export default FreeStyle;

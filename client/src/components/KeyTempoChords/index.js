@@ -7,21 +7,18 @@ const KeyTempoChords = ({
   selectedProgression,
 }) => {
   return (
-    <div>
-      <div className="card-icon-container">
-        <div className="data-icon-container">
-          <img className="data-icon" src={keyIcon}></img>
-          <p>{selectedKey}</p>
-        </div>
-        <div className="data-icon-container">
-          <img className="data-icon" src={tempoIcon}></img>
-          <p>{selectedTempo}</p>
-        </div>
-        <div className="data-icon-container">
-          <img className="data-icon" src={chordIcon}></img>
-          <p>{selectedProgression}</p>
-        </div>
-        <button className="btn start-btn">MIDI</button>
+    <div className="icon-data-wrapper">
+      <div className="song-data-container">
+        <img className="data-icon" src={keyIcon}></img>
+        <p className="p1">{selectedKey}</p>
+      </div>
+      <div className="song-data-container">
+        <img className="data-icon" src={tempoIcon}></img>
+        <p className="p1">{selectedTempo} BPM</p>
+      </div>
+      <div className="song-data-container">
+        <img className="data-icon" src={chordIcon}></img>
+        <p className="p1">{selectedProgression}</p>
       </div>
     </div>
   );
