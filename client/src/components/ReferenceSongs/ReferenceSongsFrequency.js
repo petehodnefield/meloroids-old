@@ -15,7 +15,11 @@ const ReferenceSongsFrequency = ({ selectedProgression, artist_name }) => {
     variables: { artistName: artist_name },
   });
   if (loading || singleLoading) {
-    return <h1>Loading</h1>;
+    return (
+      <div className="loading-container">
+        <h1>loading</h1>
+      </div>
+    );
   } else {
     const totalSongs = singleData.song.length;
     const songsWithProgression = data.artistAndProgression.length;
@@ -23,15 +27,17 @@ const ReferenceSongsFrequency = ({ selectedProgression, artist_name }) => {
     const progressionFrequency = (songsWithProgression / totalSongs) * 100;
     const frequencyRound = Math.floor(progressionFrequency);
     return (
-      <div>
-        <h2>
-          {artist_name} uses{" "}
-          <span className="text-emphasis">{selectedProgression}</span> in{" "}
-          {frequencyRound}% of their songs
-        </h2>
-        <div className="frequency-container">
+      <div className="frequency-bar-container">
+        <h5>
+          <span className="btn-selected bold  pill pd1">
+            {selectedProgression}
+          </span>{" "}
+          is used in <span className="bold">{frequencyRound}% </span> of{" "}
+          {artist_name}'s songs
+        </h5>
+        <div className="frequency__barfr pill">
           <div
-            className="frequency__bar"
+            className="frequency__barbg pill"
             style={{ width: progressionFrequency + "%" }}
           ></div>
         </div>

@@ -14,7 +14,11 @@ function FreeStyle({ photo }) {
   });
 
   if (loading) {
-    return <p>loading</p>;
+    return (
+      <div className="loading-container">
+        <h1>loading</h1>
+      </div>
+    );
   } else {
     return <FreestyleCard artist_name={artist}></FreestyleCard>;
   }

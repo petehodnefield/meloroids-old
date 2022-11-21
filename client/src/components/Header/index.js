@@ -11,7 +11,11 @@ const Header = () => {
     <div className="header">
       {" "}
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen}></Hamburger>
-      {isOpen ? <HamburgerLinks></HamburgerLinks> : ""}
+      {isOpen ? (
+        <HamburgerLinks isOpen={isOpen} setIsOpen={setIsOpen}></HamburgerLinks>
+      ) : (
+        ""
+      )}
       <div className="logo-wrapper">
         <Link className="home-link" to={`/`}>
           <img className="logo-full" src={logoFull} />

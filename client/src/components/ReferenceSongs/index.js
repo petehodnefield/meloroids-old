@@ -6,7 +6,11 @@ const ReferenceSongs = ({ artist_name, progression }) => {
     variables: { artistName: artist_name, progression: progression },
   });
   if (loading) {
-    return <h1>loading</h1>;
+    return (
+      <div className="loading-container">
+        <h1>loading</h1>
+      </div>
+    );
   } else {
     const songArray = data.referenceSongs;
 
@@ -16,11 +20,13 @@ const ReferenceSongs = ({ artist_name, progression }) => {
     }
 
     return (
-      <div>
+      <div className="ref-container">
+        <h3 className="ref__header">Other songs that use</h3>{" "}
+        <span className="bold pill pd1 btn-primary primary">{progression}</span>
         <div className="ref-song-grid">
           {songArray.map((song) => (
             <div className={`ref-song-container ${artistNameConcat}`}>
-              <p className="ref__text">"{song.song_name}"</p>
+              <h2 className="ref__text bold">"{song.song_name}"</h2>
               <p className="ref__text ref__album">{song.album_name}</p>
             </div>
           ))}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HamburgerLinks = () => {
+const HamburgerLinks = ({ isOpen, setIsOpen }) => {
   return (
     <div className="hamburger-links-wrapper">
       <ul className="hamNav__list">

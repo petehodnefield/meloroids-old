@@ -52,7 +52,7 @@ function FreestyleCard({ artist_name }) {
           <img src={artistImg} className="  train__img"></img>
         </div>
         <div className="song-data-wrapper">
-          <h2 className="song__header">{selectedSong}</h2>
+          <h2 className="song__header ps1">{selectedSong}</h2>
           <KeyTempoChords
             selectedKey={selectedKey}
             selectedTempo={selectedTempo}
@@ -61,14 +61,14 @@ function FreestyleCard({ artist_name }) {
 
           <ReRoll></ReRoll>
         </div>
-        {/* <ReferenceSongsFrequency
+        <ReferenceSongsFrequency
           selectedProgression={selectedProgression}
           artist_name={artist_name}
         ></ReferenceSongsFrequency>
         <ReferenceSongs
           artist_name={artist_name}
           progression={selectedProgression}
-        ></ReferenceSongs> */}
+        ></ReferenceSongs>
       </div>
     );
   }
