@@ -55,7 +55,7 @@ function ArtistModeSelect() {
           setSelectedMode={setSelectedMode}
         ></SelectMode>
 
-        {!selectedArtists && !selectedMode ? (
+        {!selectedArtists || !selectedMode ? (
           ""
         ) : (
           <ChosenArtistMode
@@ -69,7 +69,7 @@ function ArtistModeSelect() {
         ) : (
           <button className="btn btn-primary btn-link">
             <Link
-              className=" uppercase p3"
+              className=" uppercase p2"
               to={`/artists/${selectedArtists}/${selectedMode}`}
             >
               Start

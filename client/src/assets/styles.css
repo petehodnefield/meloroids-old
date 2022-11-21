@@ -1,167 +1,210 @@
 *:root {
-    --primary: #FEFEFE;
-    --secondary: #232224;
-    --tertiary: #CA69F9;
-    --accent1: #423D47;
-    --accent2: #EFECF0;
-    --black: #000000;
-    --line-p: #AEAAAF;
+  --primary: #fefefe;
+  --secondary: #232224;
+  --tertiary: #ca69f9;
+  --accent1: #423d47;
+  --accent2: #efecf0;
+  --black: #000000;
+  --line-p: #aeaaaf;
 }
 html {
   box-sizing: border-box;
 }
 body {
-    margin: 0;
-    padding: 0;
-    color: var(--secondary);
-    font-weight: 300;
+  margin: 0;
+  padding: 0;
+  color: var(--secondary);
+  font-weight: 300;
 }
-h1,h2,h3,h4,h5 {
-    font-family: Helvetica, sans-serif;
-    font-weight: 400;
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  margin: 0;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-p, a, div {
-    font-family: 'Inter';
-    color: var(--primary);
-    margin: 0;
-} 
+p,
+a,
+div {
+  font-family: "Inter";
+  color: var(--primary);
+  margin: 0;
+}
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
-h2{
-    font-size: 2rem;
+h2 {
+  font-size: 2rem;
 }
 h3 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 h4 {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 h5 {
-    font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .p1 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .p2 {
-    font-size: .875rem;
+  font-size: 0.875rem;
 }
 .p3 {
-    font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 .logo-wrapper {
-    max-height: 7rem;
-    text-align: center;
-    border-bottom: 1px solid  var(--line-p);
-    display: flex;
-    justify-content: center;
-    
-    padding: 1rem 0;    
+  max-height: 7rem;
+  text-align: center;
+  border-bottom: 1px solid var(--line-p);
+  display: flex;
+  justify-content: center;
+
+  padding: 1rem 0;
 }
 .home-link {
-    width: 4em;
+  width: 4em;
 }
 .logo-full {
-    display: none;
-    height: 100%;
+  display: none;
+  height: 100%;
 }
 .logo-small {
-    height: 100%;
+  height: 100%;
 }
 .hamburger-wrapper {
-    position: absolute;
-    left: 1.25rem;
-    top: 2rem;
-    height: 10rem;
+  position: absolute;
+  left: 1.25rem;
+  top: 2rem;
+  height: 4em;
+  z-index: 10;
 }
 .hamburger-wrapper:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .hamburger__line {
-    background: var(--black);
-    width: 2.5rem;
-    height: .25rem;
-    margin: .5rem 0;
-    border-radius: 100vmax;
+  background: var(--black);
+  width: 2.5rem;
+  height: 0.25rem;
+  margin: 0.5rem 0;
+  border-radius: 100vmax;
+}
+
+.hamburger__open {
+  transform: rotate(90deg);
+  transition: 250ms ease-in;
+}
+.hamburger__close {
+  transform: rotate(0);
+  transition: 250ms ease-in;
+}
+
+.hamburger-links-wrapper {
+  background: var(--tertiary);
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  z-index: 5;
+  width: 50%;
+  animation-name: hamburger;
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
+}
+
+@keyframes hamburger {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
 }
 .artist-mode-container {
-    margin-top: 5.5rem;
+  margin-top: 5.5rem;
 }
 
 .artist-mode-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
 }
 .select-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
 }
 .choice-wrapper {
-    overflow: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-        
-    top:2.6rem;    width: 67%;
-    max-height: 10rem;
-    background: var(--accent2);
-    padding: .25rem;
-    z-index: 5;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  top: 2.6rem;
+  width: 67%;
+  max-height: 10rem;
+  background: var(--accent2);
+  padding: 0.25rem;
+  z-index: 5;
 }
+
 .select__prompt {
-     height: 1.5rem;
-    background: var(--accent1);
-    width: 67%;
-     text-align: center;
-     display: flex;
-     align-items: center;
-     justify-content: flex-end;
-    border-radius: 5px;
-     position: relative;
+  height: 2rem;
+  background: var(--accent1);
+  width: 67%;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 5px;
+  position: relative;
+}
+.select__prompt:hover {
+  opacity: 0.9;
+  transition: 160ms ease-in;
 }
 .select__triangle {
- filter: brightness(0) invert(1);
- transform: rotate(60deg);
- margin-right: .5rem;
+  filter: brightness(0) invert(1);
+  transform: rotate(60deg);
+  margin-right: 0.5rem;
 }
 .select__artist {
-    height: 1.5rem;
-    background: var(--accent1);
-    color: var(--primary);
-    width: 100%;
-    border-radius: 5px;
-    padding: 0.25rem .5rem ;
-    border: .25px solid var(--primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
+  height: 1.5rem;
+  background: var(--accent1);
+  color: var(--primary);
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  border: 0.25px solid var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
-.select__artistText { 
-    position: absolute;
-    width: 100%;
+.select__artistText {
+  position: absolute;
+  width: 100%;
 }
 .select__artist:hover {
   background: var(--accent2);
@@ -169,25 +212,27 @@ h5 {
   transition: 125ms ease-in;
 }
 .btn {
-    outline: none;
-    border: none;
-    max-height: 1rem;
-    color: var(--primary);
+  outline: none;
+  border: none;
+  min-height: 1.25rem;
+  color: var(--primary);
+  cursor: pointer;
 }
 .btn-primary {
-    background: var(--accent1);
-    border-radius: 5px;
-    width: 7rem;
+  background: var(--accent1);
+
+  border-radius: 5px;
+  width: 7rem;
 }
 .pill {
-    border-radius: 100vmax;
+  border-radius: 100vmax;
 }
 .select-btn-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .btn-selected {
   background: var(--accent2);
@@ -196,46 +241,46 @@ h5 {
   transition: 250ms ease-in;
 }
 .btn-link {
-  min-height: 1.5rem;
+  min-height: 1.75rem;
 }
 .select__textPrompt {
-  color: var(--secondary); 
-  margin-bottom: .125rem;
+  color: var(--secondary);
+  margin-bottom: 0.125rem;
 }
 .select__text {
   margin-bottom: 0.125rem;
 }
 .selected__artistPhoto {
-    height: 100%;
-    min-width: 100%;
-    border-radius: 5px;
+  height: 100%;
+  min-width: 100%;
+  border-radius: 5px;
 }
 
 .selected__imgWrapper {
-    height: 8rem;
-    width: 8rem;
-    overflow: hidden;
+  height: 8rem;
+  width: 8rem;
+  overflow: hidden;
 }
 .selected-data-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    margin-top: .5rem;
-    margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .selected-mode-wrapper {
-    background: var(--accent1);
-    border-radius: 5px;
+  background: var(--accent1);
+  border-radius: 5px;
 }
 .selected__mode {
-    filter: brightness(0) invert(1);}
+  filter: brightness(0) invert(1);
+}
 
-
-    /* footer styles begins */
+/* footer styles begins */
 .footer {
-  padding: 0 5rem ;
+  padding: 0 5rem;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -243,13 +288,13 @@ h5 {
 
 .footer p {
   color: var(--black);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .logo-footer-wrapper {
   max-height: 20rem;
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .logo-footer {
   height: 100%;

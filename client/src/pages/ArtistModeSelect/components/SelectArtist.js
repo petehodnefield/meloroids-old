@@ -7,10 +7,10 @@ const SelectArtist = (props) => {
   return (
     <>
       <div className="select-wrapper">
-        <h5 className="select__textPrompt uppercase">Select an artist</h5>
+        <h4 className="select__textPrompt uppercase">Select an artist</h4>
         <div className="select__prompt" onClick={() => setIsOpen(!isOpen)}>
           <img className="select__triangle" src={triangleIcon} />
-          <p className="p3 select__artistText">{props.selectedArtists}</p>
+          <p className="p1 select__artistText">{props.selectedArtists}</p>
         </div>
         {isOpen ? (
           <div className="choice-wrapper">
