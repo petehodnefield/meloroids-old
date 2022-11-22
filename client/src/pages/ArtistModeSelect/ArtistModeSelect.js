@@ -69,7 +69,7 @@ function ArtistModeSelect() {
         ) : (
           <button className="btn btn-primary btn-link">
             <Link
-              className=" uppercase p2"
+              className="primary uppercase p2"
               to={`/artists/${selectedArtists}/${selectedMode}`}
             >
               Start
