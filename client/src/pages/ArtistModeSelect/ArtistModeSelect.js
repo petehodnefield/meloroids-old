@@ -7,6 +7,8 @@ import ChosenArtistMode from "./components/ChosenArtistMode";
 import { artistsPhotos } from "../../data/artistsPhotos";
 import { modesList } from "../../data/modesList";
 
+import logoFull from "../../assets/logo/meloroids.png";
+
 function ArtistModeSelect() {
   // import artistarray
   const artists = artistsPhotos;
@@ -20,6 +22,9 @@ function ArtistModeSelect() {
 
   const [selectedMode, setSelectedMode] = useState("");
   const [selectedModePhoto, setSelectedModePhoto] = useState("");
+
+  const [intervalLength, setIntervalLength] = useState("5");
+  console.log("interval", intervalLength);
 
   useEffect(() => {
     artists.forEach((artist) => {
@@ -43,6 +48,9 @@ function ArtistModeSelect() {
 
   return (
     <div className="artist-mode-container">
+      <div className="homepage-logo-wrapper">
+        <img className="homepage-logo" src={logoFull}></img>
+      </div>
       <div className="artist-mode-wrapper">
         <SelectArtist
           setSelectedArtists={setSelectedArtists}
@@ -53,6 +61,8 @@ function ArtistModeSelect() {
           modes={modes}
           selectedMode={selectedMode}
           setSelectedMode={setSelectedMode}
+          intervalLength={intervalLength}
+          setIntervalLength={setIntervalLength}
         ></SelectMode>
 
         {!selectedArtists || !selectedMode ? (
@@ -71,6 +81,7 @@ function ArtistModeSelect() {
             <Link
               className="primary uppercase p2"
               to={`/artists/${selectedArtists}/${selectedMode}`}
+              state={{ from: intervalLength }}
             >
               Start
             </Link>

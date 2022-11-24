@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoFull from "../../assets/logo/meloroids.png";
 import logoSmall from "../../assets/logo/logo-small.png";
 
+import NavLinks from "./components/NavLinks";
 import Hamburger from "./components/Hamburger";
 import HamburgerLinks from "./components/HamburgerLinks";
 const Header = () => {
@@ -22,6 +23,7 @@ const Header = () => {
           <img className="logo-small" src={logoSmall} />
         </Link>
       </div>
+      <NavLinks></NavLinks>
     </div>
   );
 };

@@ -35,7 +35,7 @@ const ReferenceSongsFrequency = ({ selectedProgression, artist_name }) => {
           is used in <span className="bold">{frequencyRound}% </span> of{" "}
           {artist_name}'s songs
         </h5>
-        <div className="frequency__barfr pill">
+        <div className="box-shadow frequency__barfr pill">
           <div
             className="frequency__barbg pill"
             style={{ width: progressionFrequency + "%" }}

@@ -2,19 +2,22 @@ import { React } from "react";
 
 import { useQuery } from "@apollo/client";
 import { SINGLE_SONG } from "../../../utils/queries";
+
 import Timer from "../../../components/Timer";
-import ReferenceSongsFrequency from "../../../components/ReferenceSongs/ReferenceSongsFrequency";
 import Juice from "../../../assets/artists/juice.jpeg";
 import TwentyOne from "../../../assets/artists/21.jpeg";
 import Doja from "../../../assets/artists/doja.jpeg";
 import Harlow from "../../../assets/artists/harlow.jpeg";
 import Gunna from "../../../assets/artists/gunna.jpeg";
 import ReferenceSongs from "../../../components/ReferenceSongs/index";
+import ReferenceSongsFrequency from "../../../components/ReferenceSongs/ReferenceSongsFrequency";
 import KeyTempoChords from "../../../components/KeyTempoChords";
 import ReRoll from "../../../components/KeyTempoChords/ReRoll";
+
 import { chordIcon, keyIcon, tempoIcon } from "../../../data/icons";
 
-function IntervalCard({ artist_name }) {
+function FreestyleCard({ artist_name }) {
+  console.log(chordIcon, keyIcon);
   const {
     data: songData,
     loading: songLoading,
@@ -46,22 +49,21 @@ function IntervalCard({ artist_name }) {
     }
 
     return (
-      <div className="container">
-        {" "}
-        <div className="artist-container">
-          <ReRoll></ReRoll>
-          <Timer></Timer>
-          <div className="card-img-container">
+      <div className="train-wrapper">
+        <Timer></Timer>
+        <div className="train-contents">
+          <div className="box-shadow  train-img-container">
             {" "}
-            <img src={artistImg} className="  card__img"></img>
+            <img src={artistImg} className=" train__img"></img>
           </div>
-          <div className="card-wrapper">
-            <h2 className="card__header">"{selectedSong}"</h2>
+          <div className="song-data-wrapper box-shadow2">
+            <h2 className="song__header ps1">{selectedSong}</h2>
             <KeyTempoChords
               selectedKey={selectedKey}
               selectedTempo={selectedTempo}
               selectedProgression={selectedProgression}
             ></KeyTempoChords>
+            <ReRoll></ReRoll>
           </div>
         </div>
         <ReferenceSongsFrequency
@@ -77,4 +79,4 @@ function IntervalCard({ artist_name }) {
   }
 }
 
-export default IntervalCard;
+export default FreestyleCard;

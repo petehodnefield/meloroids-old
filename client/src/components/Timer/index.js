@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const Timer = () => {
+const Timer = ({}) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(6);
   useEffect(() => {
@@ -25,14 +25,14 @@ const Timer = () => {
   return (
     <div className="timer-container">
       {seconds < 10 ? (
-        <p className="timer">
+        <p className="timer h2">
           {" "}
-          {minutes}: 0{seconds}
+          {minutes}:0{seconds}
         </p>
       ) : (
-        <p className="timer">
+        <p className="timer h2">
           {" "}
-          {minutes}: {seconds}
+          {minutes}:{seconds}
         </p>
       )}
     </div>

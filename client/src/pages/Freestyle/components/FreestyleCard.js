@@ -47,19 +47,20 @@ function FreestyleCard({ artist_name }) {
 
     return (
       <div className="train-wrapper">
-        <div className="train-img-container">
-          {" "}
-          <img src={artistImg} className="  train__img"></img>
-        </div>
-        <div className="song-data-wrapper">
-          <h2 className="song__header ps1">{selectedSong}</h2>
-          <KeyTempoChords
-            selectedKey={selectedKey}
-            selectedTempo={selectedTempo}
-            selectedProgression={selectedProgression}
-          ></KeyTempoChords>
-
-          <ReRoll></ReRoll>
+        <div className="train-contents">
+          <div className="box-shadow train-img-container">
+            {" "}
+            <img src={artistImg} className="  train__img"></img>
+          </div>
+          <div className="song-data-wrapper">
+            <h2 className="song__header ps1">{selectedSong}</h2>
+            <KeyTempoChords
+              selectedKey={selectedKey}
+              selectedTempo={selectedTempo}
+              selectedProgression={selectedProgression}
+            ></KeyTempoChords>
+            <ReRoll></ReRoll>
+          </div>
         </div>
         <ReferenceSongsFrequency
           selectedProgression={selectedProgression}
