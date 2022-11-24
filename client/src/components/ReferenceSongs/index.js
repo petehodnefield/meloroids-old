@@ -21,8 +21,12 @@ const ReferenceSongs = ({ artist_name, progression }) => {
 
     return (
       <div className="ref-container">
-        <h3 className="ref__header">Other songs that use</h3>{" "}
-        <span className="bold pill pd1 btn-primary primary">{progression}</span>
+        <div className="ref-header-wrapper">
+          <h3 className="ref__header">Other songs that use</h3>{" "}
+          <span className="bold pill pd1 btn-primary primary">
+            {progression}
+          </span>
+        </div>
         <div className="ref-song-grid">
           {songArray.map((song) => (
             <div className={`ref-song-container ${artistNameConcat}`}>

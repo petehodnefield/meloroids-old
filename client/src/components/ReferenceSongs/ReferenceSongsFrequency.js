@@ -28,7 +28,7 @@ const ReferenceSongsFrequency = ({ selectedProgression, artist_name }) => {
     const frequencyRound = Math.floor(progressionFrequency);
     return (
       <div className="frequency-bar-container">
-        <h5>
+        <h5 className="frequency__text">
           <span className="btn-selected bold  pill pd1">
             {selectedProgression}
           </span>{" "}
