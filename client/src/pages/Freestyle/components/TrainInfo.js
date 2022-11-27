@@ -2,8 +2,6 @@ import { React } from "react";
 
 import { useQuery } from "@apollo/client";
 import { SINGLE_SONG } from "../../../utils/queries";
-
-import Timer from "../../../components/Timer";
 import Juice from "../../../assets/artists/juice.jpeg";
 import TwentyOne from "../../../assets/artists/21.jpeg";
 import Doja from "../../../assets/artists/doja.jpeg";
@@ -13,10 +11,9 @@ import ReferenceSongs from "../../../components/ReferenceSongs/index";
 import ReferenceSongsFrequency from "../../../components/ReferenceSongs/ReferenceSongsFrequency";
 import KeyTempoChords from "../../../components/KeyTempoChords";
 import ReRoll from "../../../components/KeyTempoChords/ReRoll";
-
 import { chordIcon, keyIcon, tempoIcon } from "../../../data/icons";
 
-function FreestyleCard({ artist_name }) {
+function TrainInfo({ artist_name }) {
   console.log(chordIcon, keyIcon);
   const {
     data: songData,
@@ -50,13 +47,12 @@ function FreestyleCard({ artist_name }) {
 
     return (
       <div className="train-wrapper">
-        <Timer></Timer>
         <div className="train-contents">
-          <div className="box-shadow  train-img-container">
+          <div className="box-shadow train-img-container">
             {" "}
-            <img src={artistImg} className=" train__img"></img>
+            <img src={artistImg} className="  train__img"></img>
           </div>
-          <div className="song-data-wrapper box-shadow2">
+          <div className="song-data-wrapper">
             <h2 className="song__header ps1">{selectedSong}</h2>
             <KeyTempoChords
               selectedKey={selectedKey}
@@ -73,10 +69,11 @@ function FreestyleCard({ artist_name }) {
         <ReferenceSongs
           artist_name={artist_name}
           progression={selectedProgression}
+          selectedSong={selectedSong}
         ></ReferenceSongs>
       </div>
     );
   }
 }
 
-export default FreestyleCard;
+export default TrainInfo;

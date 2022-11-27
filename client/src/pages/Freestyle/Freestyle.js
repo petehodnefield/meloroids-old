@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { ARTISTS, SINGLE_ARTIST, SINGLE_SONG } from "../../utils/queries";
-import FreestyleCard from "./components/FreestyleCard";
+import TrainInfo from "./components/TrainInfo";
 
 function FreeStyle({ photo }) {
   // grab artist&&mode from parameters
@@ -20,7 +20,7 @@ function FreeStyle({ photo }) {
       </div>
     );
   } else {
-    return <FreestyleCard artist_name={artist}></FreestyleCard>;
+    return <TrainInfo artist_name={artist}></TrainInfo>;
   }
 }
 export default FreeStyle;

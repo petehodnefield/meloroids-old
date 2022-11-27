@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { ARTISTS, SINGLE_ARTIST, SINGLE_SONG } from "../../utils/queries";
-import intervalCard from "./components/IntervalCard";
-import IntervalCard from "./components/IntervalCard";
 
-function FreeStyle({ photo, minutes }) {
+import TrainInfo from "../Freestyle/components/TrainInfo";
+import Timer from "../../components/Timer";
+
+function Interval({ photo, minutes }) {
   // grab artist&&mode from parameters
   const { artists: artist, mode } = useParams();
 
@@ -23,7 +24,13 @@ function FreeStyle({ photo, minutes }) {
       </div>
     );
   } else {
-    return <IntervalCard artist_name={artist} minutes={minutes}></IntervalCard>;
+    return (
+      <div>
+        {" "}
+        <Timer />
+        <TrainInfo artist_name={artist} minutes={minutes}></TrainInfo>
+      </div>
+    );
   }
 }
-export default FreeStyle;
+export default Interval;

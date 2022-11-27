@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { REFERENCE_SONGS, ARTIST_AND_PROGRESSION } from "../../utils/queries";
-const ReferenceSongs = ({ artist_name, progression }) => {
+const ReferenceSongs = ({ artist_name, progression, selectedSong }) => {
   const { data, loading, error } = useQuery(REFERENCE_SONGS, {
     variables: { artistName: artist_name, progression: progression },
   });
@@ -19,6 +19,26 @@ const ReferenceSongs = ({ artist_name, progression }) => {
       artistNameConcat = "twentyone";
     }
 
+    const displayReferenceSongs = (song) => {
+      console.log(song);
+      if (song.length <= 1) {
+        return <div>No other songs with us</div>;
+      } else {
+        return song.map((song) => {
+          if (song.song_name === selectedSong) {
+            return;
+          } else {
+            return (
+              <div className={`ref-song-container ${artistNameConcat}`}>
+                <h2 className="ref__text bold">"{song.song_name}"</h2>
+                <p className="ref__text ref__album">{song.album_name}</p>
+              </div>
+            );
+          }
+        });
+      }
+    };
+
     return (
       <div className="ref-container">
         <div className="ref-header-wrapper">
@@ -27,14 +47,8 @@ const ReferenceSongs = ({ artist_name, progression }) => {
             {progression}
           </span>
         </div>
-        <div className="ref-song-grid">
-          {songArray.map((song) => (
-            <div className={`ref-song-container ${artistNameConcat}`}>
-              <h2 className="ref__text bold">"{song.song_name}"</h2>
-              <p className="ref__text ref__album">{song.album_name}</p>
-            </div>
-          ))}
-        </div>
+
+        <div className="ref-song-grid">{displayReferenceSongs(songArray)}</div>
       </div>
     );
   }

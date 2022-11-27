@@ -8,6 +8,8 @@ import Hamburger from "./components/Hamburger";
 import HamburgerLinks from "./components/HamburgerLinks";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [navSelected, setNavSelected] = useState("");
+  console.log(navSelected);
   return (
     <div className="header">
       {" "}
@@ -23,7 +25,10 @@ const Header = () => {
           <img className="logo-small" src={logoSmall} />
         </Link>
       </div>
-      <NavLinks></NavLinks>
+      <NavLinks
+        navSelected={navSelected}
+        setNavSelected={setNavSelected}
+      ></NavLinks>
     </div>
   );
 };

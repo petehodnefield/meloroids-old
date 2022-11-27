@@ -170,8 +170,7 @@ h5 {
   transform: rotate(90deg);
   transition: 250ms ease-in;
 }
-.adds-hours-like {
-}
+
 .hamburger__close {
   transform: rotate(0);
   transition: 250ms ease-in;
@@ -203,11 +202,24 @@ h5 {
   list-style: none;
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 .hamNav__li {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  padding: 0.5rem 0 0.5rem 2rem;
+  padding-left: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-
+.hamNav__li:hover {
+  background: var(--accent2);
+  transition: 120ms ease-in-out;
+}
+.selected__nav {
+  color: var(--tertiary);
+}
 .artist-mode-container {
   margin-top: 5.5rem;
 }
@@ -686,8 +698,7 @@ h5 {
   .data-icon {
     padding: 0 0.5rem;
   }
-  .frequency-bar-container {
-  }
+
   .icon-data-wrapper {
     align-items: flex-start;
   }
@@ -732,8 +743,7 @@ h5 {
   .train-img-container {
     margin-right: 8rem;
   }
-  .train__img {
-  }
+
   .song-data-wrapper {
     margin-left: 8rem;
   }
