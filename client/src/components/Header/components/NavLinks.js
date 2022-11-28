@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Login } from "../../../pages/Login";
 
 const NavLinks = ({ navSelected, setNavSelected }) => {
   return (
@@ -28,13 +30,13 @@ const NavLinks = ({ navSelected, setNavSelected }) => {
             Stats
           </a>
         </li>
-
-        <button
+        <Link
           onClick={() => setNavSelected("Login")}
           className="pill btn-tertiary p1"
+          to={"/login"}
         >
           Login
-        </button>
+        </Link>
       </ul>
     </div>
   );

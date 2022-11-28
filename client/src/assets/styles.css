@@ -327,6 +327,7 @@ h5 {
   color: var(--primary);
   border: none;
   padding: 0 1rem;
+  border-radius: 4px;
   height: 1.5rem;
 }
 .pill {
@@ -347,6 +348,19 @@ h5 {
 .btn-link {
   min-height: 1.75rem;
   color: var(--primary);
+}
+.btn-outline {
+  color: var(--black);
+  border: 1px solid var(--tertiary);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: var(--primary);
+}
+.btn-form {
+  width: 67%;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  height: 2rem;
 }
 .btn-reroll {
   background: none;
@@ -422,6 +436,40 @@ h5 {
   filter: brightness(0) invert(1);
 }
 
+/* login form style begin */
+.login-form-wrapper {
+  border: 1px solid var(--black);
+  margin: 5.5rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.form__header {
+  padding-top: 1.5rem;
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input__wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+}
+.form__input {
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid var(--tertiary);
+  margin-bottom: 0.75rem;
+  height: 1.25rem;
+}
+.form__label {
+  margin-bottom: 0.125rem;
+}
 /* train styles begin */
 .timer-container {
   position: fixed;
@@ -629,6 +677,9 @@ h5 {
     display: flex;
   }
   .hamburger-wrapper {
+    display: none;
+  }
+  .hamburger-links-wrapper {
     display: none;
   }
   .header {

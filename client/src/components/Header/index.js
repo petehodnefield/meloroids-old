@@ -15,7 +15,12 @@ const Header = () => {
       {" "}
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen}></Hamburger>
       {isOpen ? (
-        <HamburgerLinks isOpen={isOpen} setIsOpen={setIsOpen}></HamburgerLinks>
+        <HamburgerLinks
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          navSelected={navSelected}
+          setNavSelected={setNavSelected}
+        ></HamburgerLinks>
       ) : (
         ""
       )}
