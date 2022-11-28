@@ -1,13 +1,16 @@
 const db = require("../config/connection");
-const { Artist, Song, Album } = require("../models");
+const { User, Artist, Song, Album } = require("../models");
 const artist_data = require("./data/artist-data");
 const album_data = require("./data/album-data");
 const song_data = require("./data/song-data");
+const user_data = require("./data/user-data");
 
 db.once("open", async () => {
   await Song.deleteMany();
   await Album.deleteMany();
   await Artist.deleteMany();
+  await User.deleteMany();
+  const createdUser = await User.create(user_data);
 
   const createdArtist = await Artist.create(artist_data);
   const idea = createdArtist[0]._id;

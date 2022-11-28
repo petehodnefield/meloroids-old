@@ -1,6 +1,6 @@
 const { Parser } = require("graphql/language/parser");
 const { models } = require("mongoose");
-const { Artist, Song, Album, Midi } = require("../models");
+const { User, Artist, Song, Album, Midi } = require("../models");
 const resolvers = {
   Query: {
     artists: async () => {
@@ -65,6 +65,10 @@ const resolvers = {
 
     midi: async (parent, {}) => {
       return Midi.find();
+    },
+
+    users: async (parent, {}) => {
+      return User.find();
     },
   },
   Mutation: {

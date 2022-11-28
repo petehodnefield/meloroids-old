@@ -1,6 +1,13 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
+  type User {
+    _id: ID
+    username: String!
+    password: String!
+    email: String!
+  }
+
   type Album {
     _id: ID
     album_name: String!
@@ -46,6 +53,8 @@ const typeDefs = gql`
     referenceSongs(artist_name: String, progression: String): [Song]
 
     midi: [Midi]
+
+    users: [User]
   }
 
   type Mutation {
