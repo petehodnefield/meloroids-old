@@ -153,7 +153,7 @@ h5 {
   left: 1.25rem;
   top: 2rem;
   height: 4em;
-  z-index: 1001;
+  z-index: 1002;
 }
 .hamburger-wrapper:hover {
   cursor: pointer;
@@ -181,7 +181,7 @@ h5 {
   position: fixed;
   top: 0;
   height: 100vh;
-  z-index: 1000;
+  z-index: 1001;
   width: 50%;
   animation-name: hamburger;
   animation-duration: 250ms;
@@ -212,6 +212,14 @@ h5 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.hamNav__footer {
+  background-color: var(--accent1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  text-align: center;
 }
 .hamNav__li:hover {
   background: var(--accent2);
@@ -375,10 +383,10 @@ h5 {
   bottom: 1rem;
 }
 .btn-hamburger {
-  position: absolute;
   width: 80%;
   padding: inherit 1rem;
-  bottom: 0.25rem;
+  background-color: var(--accent2);
+  color: var(--black);
 }
 .dice-icon {
   height: 100%;
@@ -447,7 +455,7 @@ h5 {
 .form__header {
   padding-top: 1.5rem;
 }
-.login__form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -467,8 +475,20 @@ h5 {
   margin-bottom: 0.75rem;
   height: 1.25rem;
 }
+.form__input:focus {
+  outline: none;
+  border: 1px solid var(--accent1);
+}
 .form__label {
   margin-bottom: 0.125rem;
+}
+.form__loginLink {
+  color: var(--tertiary);
+  text-decoration: underline;
+  margin-left: 0.25rem;
+}
+.form__text {
+  margin: 0.25rem 0 0.75rem;
 }
 /* train styles begin */
 .timer-container {

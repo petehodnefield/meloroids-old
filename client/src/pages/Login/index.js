@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="login-form-wrapper">
       <h4 className="form__header">Login</h4>
-      <form className="login__form">
+      <form id="login-form" className="form">
         <div className="input__wrapper">
           <label className="p3 form__label">Username</label>
           <input className="form__input" type="username"></input>

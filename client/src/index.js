@@ -18,6 +18,7 @@ import Interval from "./pages/Interval/Interval";
 import Freestyle from "./pages/Freestyle/Freestyle";
 import Header from "./components/Header";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import Timer from "./components/Timer";
 
 const httpLink = createHttpLink({ uri: "/graphql" });
@@ -46,6 +47,7 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
 
           <Route path="artists/:artists/Freestyle" element={<Freestyle />} />
           <Route

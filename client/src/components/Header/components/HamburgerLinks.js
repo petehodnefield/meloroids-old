@@ -20,7 +20,11 @@ const HamburgerLinks = ({ isOpen, setIsOpen, navSelected, setNavSelected }) => {
           </a>
         </li>
       </ul>
-      <button className="btn btn-primary btn-hamburger h3">Login</button>
+      <div className="hamNav__footer">
+        <a href="/login">
+          <button className="btn btn-primary btn-hamburger h3">Login</button>
+        </a>
+      </div>
     </div>
   );
 };
