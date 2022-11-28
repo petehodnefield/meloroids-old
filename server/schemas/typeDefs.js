@@ -39,6 +39,10 @@ const typeDefs = gql`
     albums: [Album]
   }
 
+  type Auth {
+    token: ID
+    user: User
+  }
   type Query {
     artists: [Artist]
     artist(name: String!): Artist
@@ -60,6 +64,7 @@ const typeDefs = gql`
   type Mutation {
     addArtist(name: String!): [Artist]
     createUser(username: String!, password: String!, email: String!): [User]
+    login(username: String!, password: String!): Auth
   }
 `;
 

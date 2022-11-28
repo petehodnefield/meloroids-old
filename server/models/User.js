@@ -36,6 +36,10 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, saltRounds);
 });
 
+// compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 const User = model("User", userSchema);
 
 module.exports = User;

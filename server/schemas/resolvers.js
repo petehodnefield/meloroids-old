@@ -1,6 +1,9 @@
 const { Parser } = require("graphql/language/parser");
+const { AuthenticationError } = require("apollo-server-express");
+
 const { models } = require("mongoose");
 const { User, Artist, Song, Album, Midi } = require("../models");
+const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     artists: async () => {
@@ -77,6 +80,23 @@ const resolvers = {
     },
     createUser: async (parent, args) => {
       const user = await User.create(args);
+    },
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
+
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
     },
   },
 };
