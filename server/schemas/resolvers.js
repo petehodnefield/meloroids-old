@@ -75,6 +75,9 @@ const resolvers = {
     addArtist: async (parent, args) => {
       const artist = await Artist.create(args);
     },
+    createUser: async (parent, args) => {
+      const user = await User.create(args);
+    },
   },
 };
 

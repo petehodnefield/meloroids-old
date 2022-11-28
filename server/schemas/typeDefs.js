@@ -59,6 +59,7 @@ const typeDefs = gql`
 
   type Mutation {
     addArtist(name: String!): [Artist]
+    createUser(username: String!, password: String!, email: String!): [User]
   }
 `;
 
