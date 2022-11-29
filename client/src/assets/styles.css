@@ -623,7 +623,7 @@ h5 {
   flex-direction: column;
   background: var(--black);
   width: 14.5rem;
-  height: 24rem;
+  height: 20rem;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -646,8 +646,14 @@ h5 {
 .ref__textWrapper {
   z-index: 5;
   padding: 1rem;
-  min-height: 10rem;
-  background: var(--accent1);
+  max-height: 2rem;
+  min-height: 2rem;
+  overflow: scroll;
+  background: var(--secondary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ref__text {
   color: var(--primary);
@@ -681,7 +687,18 @@ h5 {
 .logo-footer {
   max-height: 4rem;
 }
+@media (min-width: 600px) {
+  .selected__imgWrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+}
 @media (min-width: 768px) {
+  .selected__imgWrapper {
+    height: 12rem;
+    width: 12rem;
+    overflow: hidden;
+  }
   .train-img-container {
     height: 8rem;
     border-radius: 10px;
@@ -736,11 +753,6 @@ h5 {
     top: 3.3rem;
   }
 
-  .selected__imgWrapper {
-    height: 12rem;
-    width: 12rem;
-    overflow: hidden;
-  }
   /* train styles begin */
   .train-wrapper {
     padding-top: 4rem;
