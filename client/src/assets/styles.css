@@ -606,14 +606,15 @@ h5 {
   background: var(--accent2);
   width: 100%;
   padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 .ref-song-grid {
   margin-top: 1.5rem;
   display: grid;
-  grid-auto-rows: auto;
-  align-items: center;
-  justify-content: center;
   row-gap: 1rem;
   padding-bottom: 8rem;
 }
@@ -627,6 +628,7 @@ h5 {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
 }
 .ref__albumArt {
   position: absolute;
@@ -652,11 +654,12 @@ h5 {
   background: var(--secondary);
   border-radius: 4px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .ref__text {
   color: var(--primary);
+  font-size: 1.25rem;
 }
 /* footer styles begins */
 .footer {
@@ -716,6 +719,14 @@ h5 {
   }
   .frequency__barbg {
     height: 1.25rem;
+  }
+  .ref-song-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    width: 67%;
+  }
+  .ref-song-container {
+    width: 16rem;
   }
 }
 
@@ -814,24 +825,14 @@ h5 {
     margin-right: 0.5rem;
   }
   .ref-song-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center;
     padding-bottom: 7rem;
+    width: 100%;
   }
 }
 
-@media (min-width: 1440px) {
-  .train-img-container {
-    margin-right: 4rem;
-  }
-  .song-data-wrapper {
-    margin-left: 4rem;
-  }
-  .ref-song-grid {
-    padding: 0 6rem 7rem;
-  }
-}
 @media (min-width: 1440px) {
   .header {
     padding: 0 5rem;
@@ -843,11 +844,17 @@ h5 {
   .song-data-wrapper {
     margin-left: 8rem;
   }
+  .train-img-container {
+    margin-right: 4rem;
+  }
+  .song-data-wrapper {
+    margin-left: 4rem;
+  }
   .ref-song-grid {
-    padding: 0 10rem 7rem;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
+
 @media (min-width: 1800px) {
   .train-img-container {
     margin-right: 12rem;
@@ -855,5 +862,8 @@ h5 {
   }
   .train__img {
     width: 35rem;
+  }
+  .ref-song-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }

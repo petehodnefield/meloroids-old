@@ -33,7 +33,7 @@ const ReferenceSongs = ({ artist_name, progression, selectedSong }) => {
             return (
               <div className={`ref-song-container ${artistNameConcat}`}>
                 <div className="ref__textWrapper">
-                  <h3 className="ref__text bold">{song.song_name}</h3>
+                  <p className="ref__text ">"{song.song_name}"</p>
                   {/* <p className="ref__text ref__album">{song.album_name}</p> */}
                 </div>
                 <AlbumArtwork
