@@ -23,40 +23,45 @@ const ReferenceSongs = ({ artist_name, progression, selectedSong }) => {
 
     const displayReferenceSongs = (song) => {
       console.log(song);
-      if (song.length <= 1) {
-        return <div>No other songs with us</div>;
-      } else {
-        return song.map((song) => {
-          if (song.song_name === selectedSong) {
-            return;
-          } else {
-            return (
-              <div className={`ref-song-container ${artistNameConcat}`}>
-                <div className="ref__textWrapper">
-                  <p className="ref__text ">"{song.song_name}"</p>
-                  {/* <p className="ref__text ref__album">{song.album_name}</p> */}
-                </div>
-                <AlbumArtwork
-                  album={song.album_name}
-                  artist={artistNameNewConcat}
-                ></AlbumArtwork>
-              </div>
-            );
-          }
-        });
-      }
+
+      return song.map((song) => {
+        return (
+          <div className={`ref-song-container ${artistNameConcat}`}>
+            <div className="ref__textWrapper">
+              <p className="ref__text ">"{song.song_name}"</p>
+              {/* <p className="ref__text ref__album">{song.album_name}</p> */}
+            </div>
+            <AlbumArtwork
+              album={song.album_name}
+              artist={artistNameNewConcat}
+            ></AlbumArtwork>
+          </div>
+        );
+      });
     };
 
     return (
-      <div className="ref-container">
-        <div className="ref-header-wrapper">
-          <h3 className="ref__header">Other songs that use</h3>{" "}
-          <span className="bold pill pd1 btn-primary primary">
-            {progression}
-          </span>
-        </div>
-
-        <div className="ref-song-grid">{displayReferenceSongs(songArray)}</div>
+      <div className="ref-container-blank">
+        {" "}
+        {songArray.length <= 1 ? (
+          <div className="ref-container-noRef">
+            <p className="ref__noRef bold">
+              There are no other songs by {artist_name} with this progression!
+            </p>
+          </div>
+        ) : (
+          <div className="ref-container">
+            <div className="ref-header-wrapper">
+              <h3 className="ref__header">Other songs that use</h3>{" "}
+              <span className="bold pill pd1 btn-primary primary">
+                {progression}
+              </span>
+            </div>
+            <div className="ref-song-grid">
+              {displayReferenceSongs(songArray)}
+            </div>{" "}
+          </div>
+        )}
       </div>
     );
   }

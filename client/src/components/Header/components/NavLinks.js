@@ -43,13 +43,15 @@ const NavLinks = ({ navSelected, setNavSelected }) => {
             Stats
           </a>
         </li>
-        <a
-          href="/login"
-          onClick={() => setNavSelected("Login")}
-          className="pill btn-tertiary p1"
-        >
-          Login
-        </a>
+        <li>
+          <a
+            href="/login"
+            onClick={() => setNavSelected("Login")}
+            className="pill btn-tertiary p1"
+          >
+            Login
+          </a>
+        </li>
       </ul>
     </div>
   );

@@ -338,6 +338,19 @@ h5 {
   color: var(--primary);
   cursor: pointer;
 }
+.btn-cloudy {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+.btn-nonCloudy {
+  opacity: 1;
+  transition: 1.5s;
+}
+.btn:hover {
+  opacity: 0.9;
+  transition: 250ms;
+}
 .btn-primary {
   background: var(--accent1);
 
@@ -624,21 +637,30 @@ h5 {
 }
 
 /* reference song style begin */
-.ref-container {
-  background: var(--accent2);
+.ref-container,
+.ref-container-blank {
   width: 100%;
-  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
+.ref-container {
+  background: var(--accent2);
+  padding-bottom: 2rem;
+}
+.ref-container-noRef {
+  padding-bottom: 10rem;
+}
 .ref-song-grid {
   margin-top: 1.5rem;
   display: grid;
   row-gap: 1rem;
   padding-bottom: 8rem;
+}
+.ref__noRef {
+  margin: 0 1rem;
 }
 .ref-song-container {
   display: flex;
@@ -719,6 +741,11 @@ h5 {
   }
 }
 @media (min-width: 768px) {
+  /* Login/signup style */
+  .login-form-wrapper {
+    margin: 5.5rem 8rem;
+  }
+  /* Select train style */
   .selected__imgWrapper {
     height: 12rem;
     width: 12rem;
@@ -774,6 +801,11 @@ h5 {
     display: flex;
     justify-content: center;
     padding-bottom: 2rem;
+  }
+
+  /* Login/signup style */
+  .login-form-wrapper {
+    margin: 5.5rem 12rem;
   }
   .select__textPrompt {
     font-size: 0.875rem;
@@ -859,6 +891,10 @@ h5 {
   .header {
     padding: 0 5rem;
   }
+  /* Login/signup style */
+  .login-form-wrapper {
+    margin: 10rem 30rem;
+  }
   .train-img-container {
     margin-right: 8rem;
   }
@@ -878,6 +914,10 @@ h5 {
 }
 
 @media (min-width: 1800px) {
+  /* Login/signup style */
+  .login-form-wrapper {
+    margin: 10rem 50rem;
+  }
   .train-img-container {
     margin-right: 12rem;
     height: 35rem;
