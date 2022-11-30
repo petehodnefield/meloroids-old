@@ -47,13 +47,16 @@ function App() {
             </a>{" "}
           </div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/train" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
 
-            <Route path="/artist/:artists/Freestyle" element={<Freestyle />} />
             <Route
-              path="artists/:artists/Interval"
+              path="/train/artist/:artists/Freestyle"
+              element={<Freestyle />}
+            />
+            <Route
+              path="/train/artists/:artists/Interval"
               element={<Interval></Interval>}
             />
           </Routes>

@@ -25,7 +25,7 @@ const Header = () => {
         ""
       )}
       <div className="logo-wrapper">
-        <Link className="home-link" to={`/`}>
+        <Link className="home-link" to={`/train`}>
           <img className="logo-full" src={logoFull} />
           <img className="logo-small" src={logoSmall} />
         </Link>

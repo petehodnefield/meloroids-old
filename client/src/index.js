@@ -20,6 +20,7 @@ import Header from "./components/Header";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Timer from "./components/Timer";
+import ComingSoon from "./pages/ComingSoon";
 
 const httpLink = createHttpLink({ uri: "/graphql" });
 
@@ -45,13 +46,18 @@ root.render(
       <BrowserRouter>
         <Header></Header>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/train" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/learn" element={<ComingSoon />} />
+          <Route path="/stats" element={<ComingSoon />} />
 
-          <Route path="artists/:artists/Freestyle" element={<Freestyle />} />
           <Route
-            path="artists/:artists/Interval"
+            path="/train/artists/:artists/Freestyle"
+            element={<Freestyle />}
+          />
+          <Route
+            path="/train/artists/:artists/Interval"
             element={<Interval></Interval>}
           />
         </Routes>

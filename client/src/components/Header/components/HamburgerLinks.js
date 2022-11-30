@@ -5,26 +5,52 @@ const HamburgerLinks = ({ isOpen, setIsOpen, navSelected, setNavSelected }) => {
     <div className="hamburger-links-wrapper">
       <ul className="hamNav__list">
         <li className="hamNav__li">
-          <a onClick={() => setNavSelected("Train")} className="h3">
+          <a
+            href="/"
+            onClick={() => setNavSelected("Home")}
+            className=" hamNav__a"
+          >
+            Home
+          </a>
+        </li>
+        <li className="hamNav__li">
+          <a
+            href="/train"
+            onClick={() => setNavSelected("Train")}
+            className=" hamNav__a"
+          >
             Train
           </a>
         </li>
         <li className="hamNav__li">
-          <a onClick={() => setNavSelected("Learn")} className="h3">
+          <a
+            href="/learn"
+            onClick={() => setNavSelected("Learn")}
+            className=" hamNav__a"
+          >
             Learn
           </a>
         </li>
         <li className="hamNav__li">
-          <a onClick={() => setNavSelected("Stats")} className="h3">
+          <a
+            href="/stats"
+            onClick={() => setNavSelected("Stats")}
+            className=" hamNav__a"
+          >
             Stats
           </a>
         </li>
       </ul>
-      <div className="hamNav__footer">
-        <a href="/login">
-          <button className="btn btn-primary btn-hamburger h3">Login</button>
-        </a>
-      </div>
+      <ul className="hamNav__list2 ">
+        <li className="hamNav__li">
+          <a className=" hamNav__a">My Account</a>
+        </li>
+        <li className="hamNav__li">
+          <a href="/login" className=" hamNav__a">
+            Login
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };

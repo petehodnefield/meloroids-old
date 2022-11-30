@@ -80,7 +80,7 @@ function ArtistModeSelect() {
           <button className="btn btn-primary btn-link">
             <Link
               className="primary uppercase p2"
-              to={`/artists/${selectedArtists}/${selectedMode}`}
+              to={`/train/artists/${selectedArtists}/${selectedMode}`}
               state={{ from: intervalLength }}
             >
               Start

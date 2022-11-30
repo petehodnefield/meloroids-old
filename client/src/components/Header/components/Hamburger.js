@@ -8,9 +8,21 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       }`}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="hamburger__line"></div>
-      <div className="hamburger__line"></div>
-      <div className="hamburger__line"></div>
+      <div
+        className={`hamburger__line ${
+          isOpen ? "hamburger__lineOpen" : "hamburger__lineClose"
+        }`}
+      ></div>
+      <div
+        className={`hamburger__line ${
+          isOpen ? "hamburger__lineOpen" : "hamburger__lineClose"
+        }`}
+      ></div>
+      <div
+        className={`hamburger__line ${
+          isOpen ? "hamburger__lineOpen" : "hamburger__lineClose"
+        }`}
+      ></div>
     </div>
   );
 };
