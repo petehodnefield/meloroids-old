@@ -29,6 +29,7 @@ h5 {
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   margin: 0;
+  line-height: 125%;
 }
 a {
   text-decoration: none;
@@ -40,6 +41,7 @@ div {
   font-family: "Inter";
   color: var(--black);
   margin: 0;
+  line-height: 150%;
 }
 ul {
   list-style: none;
@@ -242,6 +244,116 @@ h5 {
 .selected__nav {
   color: var(--tertiary);
 }
+/* Header style end */
+.hs-container {
+  margin: 2rem 0;
+  padding-bottom: 2.5rem;
+}
+.hs-hook-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.hs__header {
+  margin-bottom: 1rem;
+}
+.hs-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.hs__sub-header {
+  color: var(--tertiary);
+  margin-bottom: 1rem;
+}
+.hs__text {
+  margin-bottom: 0.5rem;
+}
+
+.hs-columns-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.hs-column-wrapper {
+  margin: 3rem 1rem 0;
+}
+.hs__column-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.hs-train-container {
+  background: var(--accent2);
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hs-train-header-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.hs-train-text-wrapper {
+  padding-bottom: 1rem;
+}
+.hs__train-header {
+  color: var(--tertiary);
+}
+.hs__train-sub-header {
+  font-size: 1.125rem;
+  color: var(--black);
+}
+.hs__train-img-wrapper {
+  width: 100%;
+  height: 15rem;
+  text-align: center;
+}
+.hs__train-img {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 50%;
+  border: 0.75px solid var(--accent1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+.hs-train-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 1rem;
+  justify-items: center;
+  margin-top: 3rem;
+}
+.hs__train-card {
+  background: var(--tertiary);
+  color: var(--primary);
+  width: 60%;
+  border-radius: 5px;
+  text-align: center;
+  padding: 1.5rem 0.75rem 0;
+}
+.hs__card-header {
+  margin-bottom: 1rem;
+}
+.hs__card-icon,
+.hs__card-text {
+  color: var(--primary);
+}
+.hs__card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.hs__card-text {
+  text-align: left;
+  padding-bottom: 2.5rem;
+}
+/* Homescreen style begin */
+
+/* Homescreen style end */
+/* Train select style begin */
 .artist-mode-container {
   margin-top: 5.5rem;
 }

@@ -19,6 +19,7 @@ import Freestyle from "./pages/Freestyle/Freestyle";
 import Timer from "./components/Timer";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import HomeScreen from "./pages/HomeScreen";
 
 const httpLink = createHttpLink({ uri: "/graphql" });
 
@@ -47,6 +48,8 @@ function App() {
             </a>{" "}
           </div>
           <Routes>
+            <Route path="/" element={<HomeScreen />} />
+
             <Route path="/train" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />

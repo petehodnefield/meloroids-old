@@ -21,6 +21,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Timer from "./components/Timer";
 import ComingSoon from "./pages/ComingSoon";
+import HomeScreen from "./pages/HomeScreen";
 
 const httpLink = createHttpLink({ uri: "/graphql" });
 
@@ -46,6 +47,7 @@ root.render(
       <BrowserRouter>
         <Header></Header>
         <Routes>
+          <Route path="/" element={<HomeScreen />} />
           <Route path="/train" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -61,7 +63,7 @@ root.render(
             element={<Interval></Interval>}
           />
         </Routes>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>
