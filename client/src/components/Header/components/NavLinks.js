@@ -11,7 +11,7 @@ const NavLinks = ({ navSelected, setNavSelected }) => {
           <a
             onClick={() => setNavSelected("Home")}
             className={`p1 ${navSelected === "Home" ? "selected__nav" : ""}`}
-            href="/home"
+            href="/"
           >
             Home
           </a>

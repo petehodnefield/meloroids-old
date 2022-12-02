@@ -247,17 +247,20 @@ h5 {
 /* Header style end */
 .hs-container {
   margin: 2rem 0;
+  position: relative;
   padding-bottom: 2.5rem;
 }
 .hs-hook-wrapper {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
+  position: relative;
   margin-right: 1rem;
 }
 .hs__header {
   margin-bottom: 1rem;
 }
+
 .hs-text-wrapper {
   display: flex;
   flex-direction: column;
@@ -277,6 +280,7 @@ h5 {
   flex-direction: column;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-bottom: 2.5rem;
 }
 .hs-column-wrapper {
   margin: 3rem 1rem 0;
@@ -857,6 +861,48 @@ h5 {
   .login-form-wrapper {
     margin: 5.5rem 8rem;
   }
+
+  /* Homescreen style  */
+  .hs-hook-wrapper {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .hs-text-wrapper {
+    width: 45%;
+  }
+  .hs__train-text {
+    width: 100%;
+  }
+  .hs-columns-wrapper {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .hs-columns-wrapper {
+    flex-direction: row;
+  }
+  .hs__column-header {
+    text-align: left;
+  }
+  .hs-train-container {
+    padding: 3rem 4rem;
+    position: relative;
+  }
+  .hs-train-text-img-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .hs__train-img-wrapper {
+  }
+  .hs__train-img {
+    height: 14rem;
+  }
+  .hs-train-card-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hs__train-card {
+    width: 80%;
+  }
+
   /* Select train style */
   .selected__imgWrapper {
     height: 12rem;
@@ -914,7 +960,50 @@ h5 {
     justify-content: center;
     padding-bottom: 2rem;
   }
-
+  /* Homescreen style  */
+  .hs-hook-wrapper,
+  .hs-columns-wrapper {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+  .hs-columns-wrapper {
+    margin-bottom: 7.5rem;
+    margin-top: 4.5rem;
+  }
+  .hs-column-wrapper {
+    margin: 3rem 3rem 0 0;
+  }
+  .hs-train-header-wrapper {
+    margin-bottom: 2rem;
+  }
+  .hs__text {
+    margin-bottom: 1rem;
+  }
+  .hs__train-text {
+    width: 90%;
+  }
+  .hs-train-container {
+    padding: 3rem 8rem;
+    position: relative;
+  }
+  .hs__train-header {
+    font-size: 2.5rem;
+  }
+  .hs__train-text {
+    font-size: 0.875rem;
+  }
+  .hs-train-card-wrapper {
+    margin-top: 4rem;
+  }
+  .hs__train-card {
+    width: 62%;
+  }
+  .hs__train-img-wrapper {
+    height: 21rem;
+  }
+  .hs__train-img {
+    height: 21rem;
+  }
   /* Login/signup style */
   .login-form-wrapper {
     margin: 5.5rem 12rem;
