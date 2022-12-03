@@ -24,7 +24,7 @@ const NavLinks = ({ navSelected, setNavSelected }) => {
             Train
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             onClick={() => setNavSelected("Learn")}
             className={`p1 ${navSelected === "Learn" ? "selected__nav" : ""}`}
@@ -51,7 +51,7 @@ const NavLinks = ({ navSelected, setNavSelected }) => {
           >
             Login
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

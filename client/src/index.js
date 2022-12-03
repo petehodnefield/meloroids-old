@@ -63,7 +63,7 @@ root.render(
             element={<Interval></Interval>}
           />
         </Routes>
-        {/* <Footer></Footer> */}
+        <Footer></Footer>
       </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>

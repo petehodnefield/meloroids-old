@@ -4,7 +4,7 @@ const HsHook = () => {
   return (
     <div className="hs-hook-wrapper">
       <h2 className="hs__header">
-        Become a <br></br> <span className="bold">literate</span> producer
+        Become a <span className="bold">literate</span> producer
       </h2>
       <h4 className="hs__sub-header">Gain an unfair advantage</h4>
       <div className="hs-text-wrapper">
@@ -12,8 +12,8 @@ const HsHook = () => {
           Meloroids has the best data on what artists use in their songs.
           Meloroids will help you start landing placements.
         </p>
-        <a>
-          <button className="btn-tertiary btn-cta">Learn more</button>
+        <a href="/train">
+          <button className=" btn btn-tertiary btn-cta">Learn more</button>
         </a>
       </div>
     </div>

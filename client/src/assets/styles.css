@@ -100,6 +100,16 @@ h5 {
 .box-shadow2 {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
 }
+.p-gradient {
+  background: rgb(32, 32, 32);
+  background: linear-gradient(
+    0deg,
+    rgba(32, 32, 32, 1) 0%,
+    rgba(170, 82, 213, 1) 0%,
+    rgba(170, 65, 219, 1) 84%,
+    rgba(196, 71, 255, 1) 100%
+  );
+}
 .bold {
   font-weight: 600;
 }
@@ -246,7 +256,7 @@ h5 {
 }
 /* Header style end */
 .hs-container {
-  margin: 2rem 0;
+  padding: 2rem 0;
   position: relative;
   padding-bottom: 2.5rem;
 }
@@ -256,6 +266,12 @@ h5 {
   margin-left: 1rem;
   position: relative;
   margin-right: 1rem;
+}
+.hs-shape-wrapper {
+  display: none;
+}
+.hs__shape {
+  z-index: -1;
 }
 .hs__header {
   margin-bottom: 1rem;
@@ -291,7 +307,7 @@ h5 {
 }
 .hs-train-container {
   background: var(--accent2);
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -332,7 +348,6 @@ h5 {
   margin-top: 3rem;
 }
 .hs__train-card {
-  background: var(--tertiary);
   color: var(--primary);
   width: 60%;
   border-radius: 5px;
@@ -527,6 +542,12 @@ h5 {
 }
 .btn-midi {
   width: 100%;
+}
+.btn-cta {
+  border: none;
+  padding: 0 1rem;
+  border-radius: 4px;
+  height: 1.5rem;
 }
 .btn-hamburger {
   width: 80%;
@@ -883,13 +904,17 @@ h5 {
   .hs__column-header {
     text-align: left;
   }
+  .hs__column-text {
+    width: 80%;
+  }
   .hs-train-container {
-    padding: 3rem 4rem;
+    padding: 3rem 4rem 10rem;
     position: relative;
   }
   .hs-train-text-img-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .hs__train-img-wrapper {
   }
@@ -961,11 +986,42 @@ h5 {
     padding-bottom: 2rem;
   }
   /* Homescreen style  */
+  .hs-shape-wrapper {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 28.5rem;
+    width: 40rem;
+  }
+  .hs__shape {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .hs-shape-img-wrapper {
+    position: absolute;
+    top: 4rem;
+    right: 7rem;
+    height: 21rem;
+    width: 21rem;
+  }
+  .hs__shape-img {
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .hs-hook-wrapper {
+    height: 18rem;
+    margin-top: 7rem;
+  }
   .hs-hook-wrapper,
   .hs-columns-wrapper {
     margin-left: 8rem;
     margin-right: 8rem;
   }
+
   .hs-columns-wrapper {
     margin-bottom: 7.5rem;
     margin-top: 4.5rem;
@@ -983,7 +1039,7 @@ h5 {
     width: 90%;
   }
   .hs-train-container {
-    padding: 3rem 8rem;
+    padding: 3rem 8rem 10rem;
     position: relative;
   }
   .hs__train-header {
@@ -994,9 +1050,11 @@ h5 {
   }
   .hs-train-card-wrapper {
     margin-top: 4rem;
+    column-gap: 4rem;
+    justify-content: space-between;
   }
   .hs__train-card {
-    width: 62%;
+    width: 12rem;
   }
   .hs__train-img-wrapper {
     height: 21rem;
@@ -1092,6 +1150,62 @@ h5 {
   .header {
     padding: 0 5rem;
   }
+  /* Homescreen style  */
+  .hs-shape-wrapper {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 28.5rem;
+    width: 50rem;
+  }
+  .hs__shape {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .hs-shape-img-wrapper {
+    position: absolute;
+    top: 4rem;
+    right: 14rem;
+    height: 21rem;
+    width: 21rem;
+  }
+  .hs__shape-img {
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .hs-hook-wrapper {
+    height: 18rem;
+    margin-top: 7rem;
+  }
+  .hs-hook-wrapper,
+  .hs-columns-wrapper {
+    margin-left: 16rem;
+    margin-right: 16rem;
+  }
+
+  .hs-train-container {
+    padding: 3rem 16rem 12rem;
+  }
+  .hs__train-header {
+    font-size: 2.5rem;
+  }
+  .hs__train-text {
+    font-size: 0.875rem;
+  }
+  .hs-train-card-wrapper {
+    margin-top: 4rem;
+  }
+
+  .hs__train-img-wrapper {
+    height: 21rem;
+  }
+  .hs__train-img {
+    height: 21rem;
+  }
   /* Login/signup style */
   .login-form-wrapper {
     margin: 10rem 30rem;
@@ -1115,6 +1229,27 @@ h5 {
 }
 
 @media (min-width: 1800px) {
+  /* Shape style */
+  .hs-shape-wrapper {
+    height: 28.5rem;
+    width: 65rem;
+  }
+
+  .hs-shape-img-wrapper {
+    top: 3.5rem;
+    right: 23rem;
+    height: 22rem;
+    width: 22rem;
+  }
+  .hs-hook-wrapper,
+  .hs-columns-wrapper {
+    margin-left: 22rem;
+    margin-right: 22rem;
+  }
+
+  .hs-train-container {
+    padding: 3rem 22rem 12rem;
+  }
   /* Login/signup style */
   .login-form-wrapper {
     margin: 10rem 50rem;
