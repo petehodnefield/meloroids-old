@@ -22,7 +22,7 @@ const HamburgerLinks = ({ isOpen, setIsOpen, navSelected, setNavSelected }) => {
             Train
           </a>
         </li>
-        <li className="hamNav__li">
+        {/* <li className="hamNav__li">
           <a
             href="/learn"
             onClick={() => setNavSelected("Learn")}
@@ -39,15 +39,15 @@ const HamburgerLinks = ({ isOpen, setIsOpen, navSelected, setNavSelected }) => {
           >
             Stats
           </a>
-        </li>
+        </li> */}
       </ul>
       <ul className="hamNav__list2 ">
-        <li className="hamNav__li">
+        {/* <li className="hamNav__li">
           <a className=" hamNav__a">My Account</a>
-        </li>
+        </li> */}
         <li className="hamNav__li">
           <a href="/login" className=" hamNav__a">
-            Login
+            Login (Coming Soon)
           </a>
         </li>
       </ul>
