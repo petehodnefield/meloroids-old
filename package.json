@@ -2,6 +2,7 @@
   "name": "melody-trainer",
   "version": "1.0.0",
   "description": "",
+  "main": "'./client/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
