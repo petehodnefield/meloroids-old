@@ -2,12 +2,13 @@
   "name": "melody-trainer",
   "version": "1.0.0",
   "description": "",
-  "main": "'./client/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "start": "cd client && node server.js"
+
   },
   "keywords": [],
   "author": "",
