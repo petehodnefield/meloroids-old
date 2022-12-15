@@ -22,6 +22,8 @@
 
   },
   "dependencies": {
-    "react-router-dom": "^6.4.5"
+    "react-router-dom": "^6.4.5",
+    "concurrently": "^7.2.2"
+
   }
 }
