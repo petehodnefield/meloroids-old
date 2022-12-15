@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "seed": "cd server && npm run seed",
-    "build": "cd server && npm i && cd client && npm install && npm run build",
+    "build": "cd client && npm run build",
     "start": "node server/server.js",
     "install": "cd server && npm i && cd ../client && npm i"
 
